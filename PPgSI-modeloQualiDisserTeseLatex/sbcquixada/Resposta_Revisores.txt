@@ -1,0 +1,378 @@
+RESPOSTA AOS REVISORES
+Artigo: Interação Humano-Dados em Contextos Urbanos: Uma Revisão Sistemática da Literatura
+
+Prezados(as) Revisores(as),
+
+Agradecemos as avaliações detalhadas e as recomendações de melhoria. Abaixo reproduzimos, na
+íntegra, os comentários originais de cada revisor e respondemos a cada ponto, indicando a
+alteração correspondente realizada no manuscrito (destacada em amarelo no PDF revisado).
+
+================================================================================
+REVISOR 1
+================================================================================
+
+COMENTÁRIO ORIGINAL:
+--------------------
+"O artigo entrega uma revisão sistemática de literatura (RSL) sobre [...]
+
+Como pontos fortes do trabalho, podem ser citados:
+-- Trabalho alinhado aos Grandes Desafios de Pesquisa em Interação Humano-Computador no Brasil
+(GranDIHCBR-2025-2035) e a demandas claras da sociedade atual e seus inúmeros serviços baseados
+em dados do usuário.
+-- O texto foi muito bem escrito e estruturado. A metodologia foi descrita de forma impecável,
+de maneira extremamente clara e permitindo a reprodutibilidade do processo. Todos os critérios
+e decisões foram fundamentadas no texto. A sumarização dos resultados também foi muito boa.
+-- Incluiu trabalhos em português na revisão sistemática.
+-- Diferente de outras RSL, neste trabalho os autores trazem uma grande contribuição para a área
+na seção 3. Resultados e Discussão, que ocupa boa parte das páginas do artigo. As discussões são
+aprofundadas e revisitam as questões de pesquisa de forma apropriada, com achados interessantes
+e que podem servir de referência a trabalhos futuros.
+
+Como pontos fracos do trabalho, poderiam ser destacados:
+-- O artigo é muito longo (27 páginas) para uma conferência, ainda que as últimas 7 sejam apenas
+para as referências. É importante pensar que as principais contribuições do trabalho serão
+apresentadas em uma sessão técnica de tempo reduzido. É necessário que os autores façam uma
+reflexão sobre o que precisa efetivamente ser mantido no trabalho para permitir que a
+metodologia e os resultados/contribuições sejam compreendidos pelos leitores/interessados no
+tema.
+-- Em várias partes do texto, apesar da escrita estar muito boa, ocorreram alguns problemas de
+citações de trabalhos conforme a lista a seguir: formato da citação no trecho 'Conforme
+postulado por Mortier et al. (2015), a IHD...' e também para 'as diretrizes de Kitchenham et al.
+(2013 ) e ...'; para 'como a GDPR7 (2018)...'; para 'Regulamento Geral sobre a Proteção de Dados
+(General Data Protection Regulation—GDPR)13. Acesso em: 20 maio 2026.,...'; para 'No entanto, é
+a partir dos trabalhos fundacionais de Mortier et al. (2015) que a IHD...'; para a Tabela 5
+'Modelo Fundacional (Mortier et al.)...'. Sugiro uma revisão geral do textos buscando problemas
+similares. Observar também a forma correta de se incluir notas de rodapé.
+
+A partir dos comentários anteriores, recomendo fortemente a aceitação do artigo."
+
+RESPOSTA:
+---------
+Agradecemos a avaliação criteriosa e a recomendação de aceitação. As duas questões levantadas
+foram tratadas da seguinte forma:
+
+[Extensão do artigo] Reconhecemos o apontamento. Nesta rodada de revisão, no entanto, o
+atendimento aos pedidos de maior detalhamento metodológico e conceitual feitos pelos demais
+revisores (inclusão de seção de Referencial Teórico, parágrafo de contribuições, justificativas
+metodológicas adicionais e seção de Limitações) resultou em acréscimo de conteúdo que compensou
+os cortes já feitos no Resumo/Abstract. Como resultado, o artigo NÃO foi reduzido nesta versão -
+foi, na verdade, discretamente ampliado. Um enxugamento efetivo do corpo do texto (sobretudo na
+Seção 3, Resultados e Discussão) permanece como ajuste pendente para a versão final, condicionado
+ao espaço editorial disponível.
+
+[Padronização de citações e notas de rodapé] Procedente. A causa comum era o uso de autor-ano
+manual combinado com \nocite, incompatível com o estilo de citação do template. Corrigimos:
+  - Removida toda ocorrência de \nocite; todas as citações passaram a usar \cite.
+  - "Kitchenham et al. (2013)" corrigido para \cite{KITCHENHAM2013} em todas as ocorrências (o
+    trabalho tem apenas dois autores, tornando "et al." incorreto), sem duplicar o nome dos
+    autores no texto, já que o próprio comando \cite já renderiza "Kitchenham e Brereton
+    (2013)".
+  - As notas de rodapé da Diretiva 95/46/CE e do GDPR foram reescritas: o texto "Acesso em: 20
+    maio 2026." - que antes extrapolava o comando \footnote e aparecia solto no corpo do texto -
+    foi movido para dentro da própria nota de rodapé, eliminando o vazamento para o texto
+    principal.
+  - Foi feita varredura geral do manuscrito em busca de ocorrências análogas.
+
+================================================================================
+REVISOR 2
+================================================================================
+
+COMENTÁRIO ORIGINAL:
+--------------------
+"O trabalho apresenta uma revisão sistemática da literatura sobre a área de Interação
+Humano-Dados em contextos urbanos. A temática é atual e o trabalho apresenta uma discussão
+sociotécnica relevante. Contudo, faltam detalhes metodológicos que justifiquem e tragam mais
+clareza para as decisões na condução da pesquisa. Além disso, os autores devem melhorar sua
+apresentação de fundamentação teórica, que é amplamente utilizada na discussão da literatura,
+porém pouco apresentada e fundamentada para o leitor geral. A seguir apresento alguns pontos
+para melhorar o trabalho:
+
+1) Falhas do template recomendado para trilhas do IHC. Os autores ferem algumas regras
+explícitas no modelo de artigo do evento, como o resumo em até 10 linhas. Nesse caso, os autores
+apresentam um resumo de mais de 19 linhas. Algumas partes podem ser retiradas e condensadas.
+Sobretudo, manter o resumo nos dois idiomas restrito à primeira página do artigo.
+
+2) Falta de referencial teórico que sustente algumas afirmações do trabalho. Os autores apoiam a
+introdução do estudo com algumas afirmações que não indicam citações ou dados que confirmem as
+bases nas quais o estudo se apoia. Por exemplo, 'Este problema é severamente evidenciado em
+estudos com populações vulneráveis, que frequentemente concordam com termos extensos pela
+fadiga cognitiva, sem plena compreensão das ramificações de vigilância.' Que estudos são esses?
+Quais referências os autores se apoiam para tal afirmação? Na seção de metodologia, os autores
+citam que utilizaram um filtro temporal para seleção dos artigos, 'abrangendo desde os marcos
+conceituais pioneiros até os desenvolvimentos mais recentes da área'. Quais marcos são esses?
+Quais trabalhos ou fundamentação na literatura justificam esse marco conceitual e pioneirismo?
+Ainda na metodologia, na questão QP4, os autores citam um momento prévio à consolidação da área
+de IHD. É importante que o artigo deixe claras quais bases teóricas são essas nas quais o
+trabalho se fundamenta para afirmar a consolidação da área e momentos antes ou depois de tal
+período. A inclusão de uma seção, ainda que curta, de referencial teórico, pode facilmente
+mitigar esses problemas, indicando os marcos e referências em que a pesquisa se apoia, além de
+reforçar se o objetivo do estudo traz luz a uma questão inédita ou pouco explorada na literatura
+ou por revisões relacionadas anteriormente.
+
+3) Explicitar o alinhamento da pesquisa com os grandes desafios de IHC. Os autores indicam no
+resumo e introdução que sua pesquisa está alinhada com os desafios da área, sem indicar quais
+deles a pesquisa pretende avançar. Acredito que o desafio GC5 de Interação Humano-Dados seja o
+mais adequado, todavia, os autores não deixam clara sua intenção. Nesse sentido, o item anterior
+pode ajudar a responder de que forma a pesquisa contribui para os grandes desafios e avança na
+busca por respostas e novas perguntas em algo ainda inédito.
+
+4) Melhorar a descrição e justificativa de etapas metodológicas. Algumas decisões e passos
+metodológicos escolhidos para a pesquisa precisam ser melhor justificados. A seguir apresento
+alguns exemplos:
+
+- Quais os motivos para a seleção de algumas das bases de dados, como CAPES e Teses da USP em
+detrimento de outras de igual importância para a comunidade brasileira? Como a SOL Open
+Library, que indexa artigos de diversas conferências e do IHC no qual o artigo busca ser
+publicado. Os autores justificam a escolha da Scopus por alguma razão de padronização, porém não
+é um argumento forte, já que diversas revisões ajustam a string de busca para a linguagem
+aceitável em cada base. Os autores até citam ter feito isso na seção 2.4 o que contradiz o
+argumento anterior. Talvez os autores possam indicar que a Scopus possui também indexação de
+outras bases, porém ainda assim não é coerente com a escolha da ScienceDirect e não da IEEE, por
+exemplo. Sugiro aos autores que reflitam melhor sobre as escolhas e apropriadamente justifiquem
+o rigor da pesquisa nesta etapa.
+
+- Por que há apenas uma ou duas palavras-chave relacionadas a 'Human-Data Interaction' e 'HDI' e
+ficaram de fora outras de interesse do objetivo e domínio do estudo, como 'smart cities'? Os
+autores indicam utilizar a estrutura PICOC para orientar a definição da string de busca, porém
+não são apresentados termos relacionados a cada parte, como intervention, outcomes, etc. Esses
+passos metodológicos também precisam ser esclarecidos para dar mais robustez científica ao
+estudo.
+
+- Porque nos critérios de seleção não há itens sobre os trabalhos serem do domínio
+urbano/cidades inteligentes ou não fazerem referência aos princípios fundamentais da área
+(legibilidade, agência e negociabilidade). Em certa medida, o artigo parece se esquecer de que
+esse é o objetivo geral do estudo e o recorte que ele se propõe, deixando a busca mais geral e
+ampla e não específica e aprofundada. Seriam os 'dois temas principais da pesquisa' indicados no
+item da avaliação de qualidade, esses princípios a serem buscados nos trabalhos selecionados? O
+que levanta a questão da nomenclatura dos itens que a pesquisa busca. Seria mais claro usar
+'princípios' em todo o trabalho ou apenas um termo preferido pelos autores.
+
+- Quais perfis e quantos foram os pesquisadores atuando na seleção e avaliação dos estudos? Os
+autores até citam na seção 4 a ameaça à validade interna nesse quesito, sem expor de fato como a
+seleção ocorreu. Além disso, os autores podem esclarecer quais formas buscaram para mitigar esse
+viés, por exemplo, alinhamento e conciliação entre os pesquisadores. No caso de apenas um, outros
+meios podem ter ocorrido, como revisão posterior ou discussão em grupo.
+
+5) Falta descrição das figuras. Como recomendado nas instruções gerais para submissão ao IHC,
+todas as figuras do artigo devem conter um texto descritivo para acessibilidade das imagens por
+pessoas com deficiência visual ou usuários de leitores de tela. Não identifiquei o texto
+alternativo em nenhuma das imagens. Além disso, algumas delas podem ser aumentadas, pois possuem
+textos com fonte pequena, como o caso da figura 1.
+
+6) Melhorar a legibilidade e organização do repositório de dados. Os autores apresentaram um
+repositório completo, porém pouco organizado, sobre a síntese e análise dos dados durante sua
+revisão da literatura. A organização em txt e csv sem nomeação clara dos artigos tratados em
+cada momento e sem indicação de quais etapas cada artefato de dados se refere prejudica muito a
+compreensão dos passos do estudo. Por mais que seja uma questão secundária que não interfere na
+qualidade do trabalho, ela prejudica a reprodutibilidade da pesquisa. Como sugestão, indico
+alguns trabalhos que organizam os dados de forma mais clara:
+https://zenodo.org/records/15293713; https://doi.org/10.5753/jis.2025.4487"
+
+RESPOSTA:
+---------
+1) Resumo/Abstract acima de 10 linhas.
+Procedente. O Abstract e o Resumo foram reescritos e substancialmente reduzidos, preservando
+objetivo, método, corpus, principais achados e conclusão, permanecendo ambos na primeira página
+do artigo, conforme o template do evento.
+
+2) Falta de referencial teórico / afirmações sem citação.
+Procedente. Foi adicionada a citação \cite{malgieri2020vulnerable, hayes2024making} à afirmação
+sobre populações vulneráveis e fadiga de consentimento. Os "marcos conceituais pioneiros" e o
+"momento prévio à consolidação da IHD" (citado na QP4) foram explicitamente associados ao
+trabalho fundacional de Mortier et al. (2015). Para dar suporte teórico consistente a essas
+referências, foi incluída uma nova Seção 2 ("Referencial Teórico"), posicionada entre a
+Introdução e a Metodologia, apresentando de forma sucinta a origem da IHD como campo autônomo e
+os três pilares (legibilidade, agência, negociabilidade) que estruturam toda a análise da
+revisão.
+
+3) Alinhamento explícito com os Grandes Desafios de IHC (GC5).
+Procedente. O alinhamento com o GC5 ("Interação Humano-Dados, Alfabetização em Dados e
+Privacidade Utilizável") foi explicitado no Abstract, no Resumo e ao final da Introdução, junto
+à menção aos desafios GC2 e GC3, já indicados no sistema de submissão.
+
+4) Descrição e justificativa de etapas metodológicas.
+
+a) Escolha das bases de dados (Scopus vs. ACM/IEEE/SOL; ScienceDirect vs. IEEE):
+Procedente. A justificativa da Scopus foi reescrita para eliminar a contradição apontada
+(padronização vs. adaptação de strings por base): explicamos que a Scopus indexa de forma
+agregada o conteúdo de editoras como Elsevier, ACM e IEEE, permitindo padronizar a extração de
+metadados sem repetir a busca em múltiplas plataformas nativas. Reconhecemos explicitamente, no
+mesmo trecho, que essa escolha pode ter deixado de fora trabalhos indexados apenas em bases
+nativas (ACM Digital Library, IEEE Xplore) ou em repositórios brasileiros como a SOL, limitação
+retomada na seção de Ameaças à Validade.
+
+b) Palavras-chave e estrutura PICOC sem termos por dimensão:
+Procedente. Foram adicionados exemplos concretos de termos de busca para cada dimensão do PICOC
+(População, Intervenção, Controle, Resultados, Aplicação).
+
+c) Critérios de seleção sem referência ao domínio urbano/princípios da IHD:
+Os critérios de inclusão/exclusão (CI1-CI6, CE1-CE6) efetivamente aplicados na condução original
+da RSL permanecem inalterados - não introduzimos critérios novos que não tenham sido de fato
+utilizados na triagem executada. Esclarecemos no texto que essa dimensão já está coberta
+implicitamente pelos critérios CE4 (menção superficial à IHD) e CE6 (uso do termo fora de
+contexto de interação cidadã/usuária). Também padronizamos a nomenclatura: o termo "temas
+principais" usado na Avaliação de Qualidade foi explicitamente definido como sinônimo dos três
+princípios da IHD (legibilidade, agência, negociabilidade), eliminando a ambiguidade apontada,
+sem alterar os critérios efetivamente aplicados.
+
+d) Perfis e quantidade de pesquisadores na seleção/avaliação dos estudos:
+A triagem por título/resumo e a aplicação dos critérios de inclusão/exclusão foram conduzidas
+integralmente por um único pesquisador (a autora principal), sem um segundo revisor
+independente. Essa condução individual, no entanto, foi guiada pela escoragem sistemática dos
+artigos segundo a matriz de Avaliação de Qualidade, cujos registros de pontuação por artigo
+estão documentados no repositório suplementar da pesquisa e podem ser auditados externamente,
+reduzindo - ainda que não eliminando - a arbitrariedade da decisão individual. O texto foi
+ajustado para declarar esse fato de forma direta: a ausência de um segundo revisor independente
+permanece registrada como ameaça reconhecida à validade interna do estudo, mitigada pelo uso da
+escoragem, mas não eliminada por ela.
+
+5) Falta de descrição das figuras (acessibilidade) e tamanho de fonte pequeno na Figura 1.
+Procedente. A Figura 1 (fluxo PRISMA) teve sua largura aumentada (de 0,87 para 0,90 da largura
+da coluna), melhorando a legibilidade do texto interno. A adição de texto alternativo completo
+para leitores de tela em ambas as figuras permanece pendente de implementação técnica
+compatível com o template (uma primeira tentativa via \pdftooltip causou corte indevido da
+imagem e foi revertida); a descrição textual do conteúdo de cada figura já consta na legenda.
+
+6) Organização do repositório de dados.
+Comentário procedente, mas fora do escopo textual deste artigo - trata-se de um repositório
+suplementar externo, não de conteúdo do manuscrito em si. Registramos o apontamento e nos
+comprometemos a reorganizar a nomenclatura e a estrutura dos artefatos (CSV/TXT) do repositório
+na versão de câmera-pronta, seguindo os exemplos de organização sugeridos pelo revisor.
+
+================================================================================
+REVISOR 3
+================================================================================
+
+COMENTÁRIO ORIGINAL:
+--------------------
+"O trabalho apresenta uma Revisão Sistemática da Literatura sobre Interação Humano-Dados em
+Contextos Urbanos. O tema possui aderência à área e a motivação da pesquisa está bem
+fundamentada. No entanto, o artigo ainda necessita de maior amadurecimento para fortalecer seu
+rigor metodológico e a qualidade da apresentação. A seguir, apresento algumas sugestões de
+melhoria.
+
+1 - A expressão 'O século tem testemunhado uma rápida urbanização' apresenta um tom mais
+narrativo do que o esperado em um artigo científico. Recomendo substituí-la por uma construção
+mais objetiva, como 'A urbanização tem avançado rapidamente ao longo do século XXI'.
+
+2 - Algumas afirmações fundamentadas na literatura não apresentam as respectivas referências.
+Recomendo revisar o texto para garantir que todas as informações derivadas de trabalhos
+anteriores estejam devidamente referenciadas.
+
+3 - Recomendo evitar, sempre que possível, construções com o pronome apassivador, pois elas
+tornam a redação menos direta e reduzem a fluidez do texto. Exemplos incluem 'consolidaram-se',
+'sustenta-se' e 'busca-se'.
+
+4 - A introdução apresenta uma quantidade limitada de referências e concentra grande parte das
+citações em trabalhos menos recentes. Recomendo ampliar a fundamentação teórica com estudos mais
+atuais e representativos da área.
+
+5 - A frase 'Contudo, enfrentam desafios críticos de privacidade' apresenta uma transição
+abrupta em relação à ideia anterior. Recomendo fortalecer a coesão entre os argumentos para
+tornar a progressão textual mais fluida. Essa dica vale para todo o texto.
+
+6 - Há um espaço em branco desnecessário na citação 'Kitchenham et al. (2013 )' presente na
+primeira frase da introdução. Recomendo revisar a formatação ao longo de todo o artigo para
+eliminar inconsistências semelhantes.
+
+7 - Senti falta de uma descrição da adaptação das strings de busca para cada base de dados. Como
+cada base possui características e mecanismos de busca distintos, esse detalhamento fortalece a
+reprodutibilidade da revisão sistemática.
+
+8 - A informação 'Acesso em: 20 maio 2026.' apresentada na Seção 3.1 deve constar apenas na
+lista de referências, e não no corpo do texto.
+
+9 - O artigo não apresenta uma seção dedicada às limitações do estudo. Recomendo discutir
+explicitamente as limitações da pesquisa, diferenciando-as das ameaças à validade, pois ambas
+possuem propósitos distintos.
+
+10 - Os autores indicaram, no sistema de submissão, aderência aos desafios GC2, GC3 e GC4.
+Entretanto, considerando o foco do estudo, o artigo também demonstra forte alinhamento com o
+desafio GC5 ('Interação Humano-Dados, Alfabetização em Dados e Privacidade Utilizável').
+Recomendo explicitar essa relação no artigo, evidenciando como a pesquisa contribui para esse
+desafio.
+
+11 - Recomendo incluir, ao final da introdução, um parágrafo destacando as principais
+contribuições do artigo. Essa organização facilita a compreensão do escopo da pesquisa e
+evidencia suas contribuições para a área.
+
+12 - Os resultados da revisão apresentam potencial para a construção de uma taxonomia. Essa
+organização pode fortalecer a contribuição científica do artigo ao oferecer uma visão
+estruturada do conhecimento produzido na área."
+
+RESPOSTA:
+---------
+1) Tom narrativo em "O século tem testemunhado uma rápida urbanização".
+Procedente. Substituído exatamente pela redação sugerida: "A urbanização tem avançado
+rapidamente ao longo do século XXI".
+
+2) Afirmações fundamentadas na literatura sem referência.
+Procedente. Foi adicionada citação de suporte à afirmação sobre populações vulneráveis e fadiga
+de consentimento (\cite{malgieri2020vulnerable, hayes2024making}). Os marcos conceituais
+pioneiros e a menção à consolidação da IHD na QP4 foram associados explicitamente ao trabalho
+fundacional de Mortier et al. (2015), com detalhamento em nova seção de Referencial Teórico
+incluída entre a Introdução e a Metodologia.
+
+3) Construções com pronome apassivador.
+Procedente. Os exemplos citados foram corrigidos: "consolidaram-se" (Introdução, sobre as
+Cidades Inteligentes) e "sustenta-se" (Introdução, sobre os pilares da IHD) foram reescritos em
+voz ativa; "busca-se" (fechamento da Introdução) foi substituído por "este trabalho identifica".
+Não foi feita, por ora, uma varredura exaustiva de todo o texto em busca de construções análogas
+remanescentes.
+
+4) Introdução com poucas referências recentes.
+Procedente. Foram adicionadas duas referências de 2024 (\cite{DOWTHWAITE2024, hayes2024making})
+reforçando a afirmação sobre limitações práticas e socioculturais da IHD, complementando a
+literatura já citada. O reforço foi pontual; uma revisão mais ampla das referências da
+Introdução com foco em recência permanece como melhoria possível para versões futuras.
+
+5) Transição abrupta em "Contudo, enfrentam desafios críticos de privacidade".
+Procedente. A transição foi reescrita para reforçar a coesão com a frase anterior ("Essa mesma
+infraestrutura, no entanto, enfrenta desafios críticos..."), explicitando que o sujeito da
+oração são os próprios ecossistemas de Cidades Inteligentes descritos antes.
+
+6) Espaço em branco em "Kitchenham et al. (2013 )".
+Procedente. O problema foi eliminado ao padronizar a citação para \cite{KITCHENHAM2013} em
+todas as ocorrências, sem texto manual de autor/ano.
+
+7) Falta de descrição da adaptação das strings de busca por base de dados.
+Procedente. Foi adicionado um exemplo concreto de adaptação sintática: substituição do operador
+TITLE-ABS-KEY (Scopus) pelos campos equivalentes de título/resumo/palavras-chave da ScienceDirect
+e do Portal de Periódicos CAPES, e ajuste dos operadores booleanos e de truncamento conforme a
+sintaxe de cada base.
+
+8) "Acesso em: 20 maio 2026." no corpo do texto (Seção 3.1).
+Procedente. O texto foi movido para dentro do comando \footnote correspondente (notas da
+Diretiva 95/46/CE e do GDPR), não aparecendo mais no corpo do texto.
+
+9) Ausência de seção de Limitações, distinta das Ameaças à Validade.
+Procedente. Foi adicionada a Subseção "Limitações do Estudo", ao final da Seção de Ameaças à
+Validade, tratando especificamente do alcance e da profundidade do escopo da pesquisa (cobertura
+de bases de dados, caráter descritivo da síntese frente a uma taxonomia formal, e ausência de uma
+seção de referencial teórico totalmente independente da análise crítica), diferenciando-a das
+ameaças ao rigor metodológico já discutidas.
+
+10) Alinhamento explícito com o desafio GC5.
+Procedente. O alinhamento com o GC5 foi explicitado no Abstract, no Resumo e ao final da
+Introdução, junto à menção aos desafios GC2 e GC3 já indicados no sistema de submissão.
+
+11) Parágrafo de contribuições ao final da Introdução.
+Procedente. Foi adicionado parágrafo explícito com as três principais contribuições do artigo:
+(i) síntese crítica da evolução da IHD (2014-2024); (ii) mapeamento de lacunas estruturais,
+cognitivas e socioculturais; (iii) matriz comparativa de frameworks, contextos de validação
+empírica e métodos de avaliação.
+
+12) Potencial de construção de uma taxonomia.
+Procedente. O potencial de construção de uma taxonomia formal a partir dos eixos temáticos
+identificados nesta revisão foi registrado na nova Subseção "Limitações do Estudo" como direção
+promissora para trabalhos futuros.
+
+================================================================================
+OBSERVAÇÃO FINAL
+================================================================================
+Todas as alterações textuais realizadas em resposta a este processo de revisão estão destacadas
+em amarelo no PDF revisado, para facilitar a localização pelos revisores. Os itens não
+integralmente resolvidos nesta rodada (redução de extensão do artigo, reorganização do
+repositório de dados externo, texto alternativo completo nas figuras e varredura exaustiva de
+construções em voz passiva) foram sinalizados de forma transparente acima e permanecem como
+compromissos para a versão final.

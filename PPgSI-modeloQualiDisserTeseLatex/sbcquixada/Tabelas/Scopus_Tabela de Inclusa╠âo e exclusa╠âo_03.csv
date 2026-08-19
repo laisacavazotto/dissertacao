@@ -1,0 +1,53 @@
+Artigo,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,Conclusão
+81,X,X,X,,,,X,X,,,,,,,,,,Incluído
+82,X,X,X,,,X,X,X,,,,,,,,,,Incluído
+83,X,X,X,X,,,X,X,,,,,,,,,,Incluído
+84,X,X,X,,,,X,X,,,,,,,,,,Incluído
+85,X,X,,X,X,,X,X,,,,,,,,,,Excluído
+86,X,X,,,,,X,X,,,,,,,,,,Incluído
+87,X,X,X,X,,,X,X,,,,,,,,,,Incluído
+88,X,X,X,,,,X,X,,,,,,,,,,Incluído
+89,X,X,X,,,,X,X,,,,,,,,,,Incluído
+90,X,X,X,,,,X,X,,,,,,,,,,Incluído
+91,X,X,,,,X,X,X,,,,,,,,,,Incluído
+92,X,X,X,X,,,X,X,,,,,,,,,,Incluído
+93,X,X,X,X,,,X,X,,,,,,,,,,Incluído
+94,X,X,X,,,,X,X,,,,,,,,,,Incluído
+95,X,X,,X,X,,X,X,,,,,,,,,X,Excluído
+96,,,,,,,X,X,,,,,,X,X,,,Excluído
+97,X,X,X,,,X,X,X,,,,,,,,,,Incluído
+98,X,X,X,,,X,X,X,,,,,,,,X,,Incluído
+99,X,X,X,,,,X,X,,,,,,,,,,Incluído
+100,X,X,X,X,X,X,X,X,,,,,,,,X,,Excluído
+101,,,,,,,X,X,,,,,,X,X,,,Excluído
+102,X,X,,,,,X,X,,,,,,,,X,,Excluído
+103,,,X,X,X,,X,X,,,,,,,,,,Incluído
+104,X,X,,,X,,X,X,,,,,,,,,,Incluído
+105,X,X,,X,,X,X,X,,,,,,,,,,Incluído
+106,,,,,,,X,X,,,,,,,,X,,Excluído
+107,X,X,,X,X,,X,X,,X,,,,,,X,,Excluído
+108,X,X,X,X,X,,X,X,,,,,,,,,,Incluído
+109,X,X,,X,,,X,X,,,,,,,,,,Incluído
+110,X,X,,X,X,,X,X,,X,,X,,,,,,Excluído
+111,X,X,,X,X,,X,X,,,,,,,,,,Incluído
+112,X,X,,,,X,X,X,,,,,,,,,,Incluído
+113,X,X,X,X,,,X,X,,,,,,,,,,Incluído
+114,X,X,,X,X,,X,X,,X,,,,,,X,,Excluído
+115,,X,,X,X,,X,X,,,,X,,,,,,Excluído
+116,X,X,,X,X,,X,X,,,,X,,,,X,,Excluído
+117,X,,X,X,,,X,X,,,,,,,,,,Incluído
+118,,,,,,,X,X,,X,,,,,,X,,Excluído
+119,X,X,,X,X,,X,X,,X,,X,,,,X,,Excluído
+120,,,,,,,X,X,,X,,X,,,,,,Excluído
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+INCLUSÃO,,25,,,,,,,,,,,,,,,,
+EXCLUSÃO,,15,,,,,,,,,,,,,,,,
+DUPLICATA,,,,,,,,,,,,,,,,,,
+CRITÉRIO J,,6,,,,,,,,,,,,,,,,
+CRITÉRIO L,,5,,,,,,,,,,,,,,,,
+CRITÉRIO N,,2,,,,,,,,,,,,,,,,
+CRITÉRIO O,,2,,,,,,,,,,,,,,,,
+CRITÉRIO P,,9,,,,,,,,,,,,,,,,
+CRITÉRIO Q,,1,,,,,,,,,,,,,,,,
