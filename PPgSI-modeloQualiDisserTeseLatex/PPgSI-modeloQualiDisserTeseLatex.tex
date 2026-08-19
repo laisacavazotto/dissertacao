@@ -83,6 +83,10 @@
 \usepackage{rotating}
 \usepackage{pdflscape}   % para \begin{landscape}
 \usepackage[table]{xcolor}
+\usepackage{soul}				% para \hl{} - destaque de trechos revisados
+\sethlcolor{yellow}				% cor de destaque das revisões desta rodada de ajustes
+\newcommand{\hlcite}[1]{\colorbox{yellow}{\cite{#1}}} % citação destacada (\hl do soul quebra com \cite)
+\newcommand{\hlciteonline}[1]{\colorbox{yellow}{\citeonline{#1}}} % idem para \citeonline
 
 
 
@@ -753,7 +757,7 @@ Dissertação apresentada à Escola de Artes, Ciências e Humanidades da Univers
     orienta tanto a análise dos estudos revisados quanto a 
     proposta de avaliação desenvolvida neste trabalho.
 
-   \section{Interação Humano-Dados}
+   \section{Interação Humano-Dados}\label{sec:referencial}
 
     O conceito de Interação Humano-Dados (\textit{Human-Data Interaction}---IHD) emerge como resposta à crescente geração, coleta e uso de dados pessoais em sistemas digitais, marcando uma ruptura em relação à Interação Humano-Computador (IHC) tradicional. A IHC, campo consolidado voltado à usabilidade de interfaces e à engenharia de fatores humanos, centrava-se na relação entre o usuário e o dispositivo ou tela---seus métodos priorizavam a eficiência da interação com o artefato computacional e negligenciavam o impacto e o significado social dos dados produzidos nessa interação \cite{Strey2019Human, Belizario2023Interacao}. Nesse paradigma, os dados eram tratados como subproduto técnico do uso do sistema, e não como objeto central da relação entre o indivíduo e a tecnologia \cite{calvetti2024human}.
 
@@ -834,7 +838,7 @@ Dissertação apresentada à Escola de Artes, Ciências e Humanidades da Univers
     {\small Fonte: Adaptado de \citeonline{Hornung2015}.}
 \end{quadro}
 
-    A contribuição central de \citeonline{Hornung2015} é demonstrar que compreender as consequências do uso de dados exige considerar todas as camadas do framework semiótico---e não apenas a exibição visual final. A camada pragmática merece atenção especial: ela está presente desde as etapas iniciais do ciclo de vida, pois as intenções dos stakeholders que conceberam a ferramenta orientam as decisões de coleta, transformação e representação antes mesmo que qualquer dado chegue ao usuário. Uma interface visualmente clara pode, ainda assim, induzir conclusões distorcidas se essas decisões anteriores tiverem sido orientadas por interesses que não os do usuário. Os efeitos dessas distorções se manifestam na camada social: privacidade violada, confiança erodida, comportamentos induzidos sem consentimento informado. Essa perspectiva tridimensional---fase, camada e stakeholder---é indispensável para qualquer pesquisa que pretenda avaliar IHD de forma estrutural, e não apenas superficial.
+    A contribuição central de \citeonline{Hornung2015} é demonstrar que compreender as consequências do uso de dados exige considerar todas as camadas do framework semiótico---e não apenas a exibição visual final. A camada pragmática merece atenção especial: ela está presente desde as etapas iniciais do ciclo de vida, pois as intenções dos stakeholders que conceberam a ferramenta orientam as decisões de coleta, transformação e representação antes mesmo que qualquer dado chegue ao usuário. Uma interface visualmente clara pode, ainda assim, induzir conclusões distorcidas se essas decisões anteriores tiverem sido orientadas por interesses que não os do usuário. Os efeitos dessas distorções se manifestam na camada social: privacidade violada, confiança erodida, comportamentos induzidos sem consentimento informado. Essa perspectiva tridimensional---fase, camada e stakeholder---\hl{mostra-se relevante} para pesquisas que pretendam avaliar IHD de forma estrutural, e não apenas superficial.
 
     \section{Mecanismos de Consentimento e Controle}
 
@@ -957,7 +961,7 @@ Dissertação apresentada à Escola de Artes, Ciências e Humanidades da Univers
 
     \citeonline{cezar2023cognitive} confirmaram empiricamente a relevância dessa distinção: em estudo quantitativo com 604 usuários, demonstraram que falhas nos pilares de legibilidade e agência contribuem diretamente para estados de sobrecarga cognitiva e ansiedade de dados, levando usuários com menor letramento digital a adotar comportamentos de esquiva em vez de gestão ativa de suas informações pessoais.
 
-    Esse achado sugere que a percepção de privacidade---tal como medida pela escala de \citeonline{masur2019situational}---não opera de forma independente do design dos sistemas: interfaces que comprometem a legibilidade tendem a distorcer a percepção do usuário, tornando a triangulação entre avaliação técnica e percepção empírica indispensável.
+    Esse achado sugere que a percepção de privacidade---tal como medida pela escala de \citeonline{masur2019situational}---não opera de forma independente do design dos sistemas: interfaces que comprometem a legibilidade tendem a distorcer a percepção do usuário, o que \hl{reforça a relevância de} triangular avaliação técnica e percepção empírica.
 
     Essa estrutura bidimensional é particularmente adequada ao contexto desta pesquisa, pois os aplicativos urbanos analisados operam simultaneamente em dois regimes: o do poder público e das plataformas privadas (eixo vertical, institucional) e o das interações entre usuários em ambientes digitais compartilhados (eixo horizontal, entre pares). A variação esperada nas respostas dos cidadãos paulistanos conforme seu perfil sociocultural---em especial quanto ao letramento digital e à familiaridade com práticas de coleta de dados---torna o instrumento de \citeonline{masur2019situational} o mais adequado para capturar essa heterogeneidade de percepções.
 
@@ -985,7 +989,7 @@ Dissertação apresentada à Escola de Artes, Ciências e Humanidades da Univers
 
 \chapter{Trabalhos Relacionados}
 
-    Este capítulo introduz a fundamentação teórica e os delineamentos da Revisão Sistemática da Literatura (RSL) conduzida para mapear o estado da arte da Interação Humano-Dados (IHD) em contextos urbanos sociotécnicos. O levantamento, embasado nas diretrizes de \citeonline{KITCHENHAM2013} e alinhado às recomendações do protocolo PRISMA, tem como objetivo consolidar o referencial necessário para a etapa empírica desta dissertação, focada na análise de aplicativos de amplo uso na cidade de São Paulo. O rigoroso detalhamento do processo investigativo — englobando o protocolo metodológico, as questões de pesquisa, a estratégia de busca e as etapas de condução e síntese — será apresentado nas seções subsequentes.
+    Este capítulo introduz a fundamentação teórica e os delineamentos da Revisão Sistemática da Literatura (RSL) conduzida para mapear o estado da arte da Interação Humano-Dados (IHD) em contextos urbanos sociotécnicos. O levantamento foi conduzido \hl{segundo diretrizes consolidadas para revisões sistemáticas em Computação} \citeonline{KITCHENHAM2013} \hl{e o protocolo PRISMA 2020} \hlciteonline{prisma2021}\hl{,} e tem como objetivo consolidar o referencial necessário para a etapa empírica desta dissertação, focada na análise de aplicativos de amplo uso na cidade de São Paulo. O detalhamento do processo investigativo — englobando o protocolo metodológico, as questões de pesquisa, a estratégia de busca e as etapas de condução e síntese — será apresentado nas seções subsequentes.
 
     A adoção desse método viabiliza a síntese estruturada da literatura, permitindo articular as formulações teóricas da IHD com os desafios de suas implementações práticas. A estratégia exploratória abrangeu repositórios multidisciplinares (Scopus e Science Direct) e acervos nacionais (Portal de Periódicos CAPES, Catálogo de Teses da CAPES e BDTD-USP), utilizando descritores cruzados entre governança de dados e ecossistemas urbanos. O \textit{corpus} bibliográfico resultante engloba desde propostas de \textit{frameworks} conceituais até estudos de caso aplicados, os quais foram selecionados mediante critérios preestabelecidos, com o intuito de conferir pertinência, transparência e reprodutibilidade ao referencial analisado.
     
@@ -1003,7 +1007,7 @@ Dissertação apresentada à Escola de Artes, Ciências e Humanidades da Univers
  
     \section{Protocolo de Revisão Sistemática}
 
-    O escopo metodológico delineado neste protocolo estrutura-se em frentes complementares de investigação sobre a Interação Humano-Dados (IHD). O levantamento busca compreender a evolução conceitual e prática da área na última década, mapeando tanto as estratégias que antecederam a adoção formal da IHD quanto as eventuais divergências entre proposições teóricas e implementações reais. 
+    \hl{Esta seção detalha o protocolo metodológico da Revisão Sistemática da Literatura (RSL), conduzida segundo diretrizes consolidadas para revisões sistemáticas em Computação} \citeonline{KITCHENHAM2013} \hl{e o protocolo PRISMA 2020} \hlciteonline{prisma2021}\hl{, ilustrado na Figura~}\ref{fig:fluxo_prisma}\hl{.} O escopo metodológico delineado neste protocolo estrutura-se em frentes complementares de investigação sobre a Interação Humano-Dados (IHD). O levantamento busca compreender a evolução conceitual e prática da área na última década, mapeando tanto as estratégias que antecederam a adoção formal da IHD quanto as eventuais divergências entre proposições teóricas e implementações reais.
 
     De forma complementar, no cenário das cidades inteligentes (\textit{Smart Cities}), o foco direciona-se não apenas à articulação dos princípios basilares de legibilidade, agência e negociabilidade, mas também abrange aspectos técnicos de transparência e o ciclo de vida dos dados nas aplicações. Por fim, a revisão explora as dinâmicas associadas ao letramento digital, aos métodos de avaliação de eficácia e à experiência dos cidadãos diante da coleta de dados pessoais, buscando compreender como fatores socioculturais influenciam a capacidade dos usuários de assimilar e gerenciar suas próprias informações.
     
@@ -1046,7 +1050,7 @@ Dissertação apresentada à Escola de Artes, Ciências e Humanidades da Univers
     \item[] \textbf{QP1} - Como a literatura sobre Interação Humano-Dados (IHD) evoluiu conceitual e empiricamente na última década (2014-2024)?
     \item[] \textbf{QP2} - Quais são as principais divergências ou alinhamentos entre as abordagens teóricas e as implementações práticas relatadas na literatura nesse período?
     \item[] \textbf{QP3} - Quais são as lacunas de pesquisa mais recorrentemente apontadas nos estudos primários?
-    \item[] \textbf{QP4} - Quais estratégias ou abordagens precederam a adoção formal da IHD para facilitar a compreensão e a gestão de dados em aplicações?
+    \item[] \textbf{QP4} - \hl{Antes da emergência da IHD, tomando como marco divisor o trabalho fundacional de} \hlciteonline{mortier2015humandatainteractionhumanface} \hl{em 2015, conforme detalhado na Seção~}\ref{sec:referencial}\hl{,} quais estratégias ou abordagens \hl{facilitavam} a compreensão e a gestão de dados em aplicações?
     \item[] \textbf{QP5} - Qual é a relevância da aplicação dos princípios de IHD no ecossistema de cidades inteligentes (\textit{Smart Cities})?
 \end{itemize}
 
@@ -1058,14 +1062,14 @@ Dissertação apresentada à Escola de Artes, Ciências e Humanidades da Univers
     \item[] \textbf{QPS4} - De que forma fatores étnico-culturais influenciam a implementação e a apropriação das diretrizes de IHD?
 \end{itemize}
 
-    Para operacionalizar as respostas a essas questões, a condução desta revisão pautou-se em um protocolo estruturado em cinco dimensões. Essa abordagem permitiu não apenas sintetizar o referencial teórico, mas também estabelecer conexões sólidas entre os aspectos conceituais e práticos da IHD, servindo como alicerce metodológico para as etapas empíricas desta pesquisa. Os componentes-chave do levantamento foram definidos da seguinte maneira:
+    \hl{Para fundamentar a busca e a seleção dos estudos destinados a responder a essas questões, o escopo da revisão foi delimitado utilizando uma adaptação da estrutura PICOC---do inglês \textit{Population, Intervention, Control, Outcomes, and Context} (População, Intervenção, Controle, Resultados e Contexto/Aplicação), detalhada a seguir com os respectivos termos de busca associados a cada dimensão. Essa abordagem permitiu não apenas sintetizar o referencial teórico, mas também estabelecer conexões entre os aspectos conceituais e práticos da IHD, servindo como alicerce metodológico para as etapas empíricas desta pesquisa.}
 
 \begin{itemize}
-    \item[]\textbf{Intervenção:} O mapeamento do escopo conceitual da IHD, contemplando seus princípios teóricos fundamentais, as metodologias de mensuração aplicáveis e as principais lacunas científicas apontadas pela literatura;
-    \item[] \textbf{Controle:} A seleção pautou-se em critérios sistemáticos, priorizando estudos que propusessem (re)formulações de princípios de IHD, apresentassem aplicações práticas ou discutissem métodos de avaliação nesse contexto;
-    \item[] \textbf{População:} Trabalhos acadêmicos e estudos empíricos que demonstrassem aplicações concretas ou discussões teóricas sobre a IHD em contextos diversificados;
-    \item[] \textbf{Resultados:} A consolidação das evidências sobre métodos e técnicas empregados, culminando em um panorama abrangente das tendências e carências da área;
-    \item[] \textbf{Aplicação:} A geração de subsídios teóricos e práticos destinados a pesquisadores de IHD e Interação Humano-Computador (IHC), bem como a profissionais interessados na adoção e avaliação desses princípios no desenvolvimento de sistemas.
+    \item[] \hl{\textbf{População:} Trabalhos acadêmicos da área de IHD e pesquisas que demonstrem aplicações concretas dos seus princípios em diversos contextos (termos de busca: \textit{``Human-Data Interaction''}, \textit{``HDI''}).}
+    \item[] \hl{\textbf{Intervenção:} Delimitação do escopo conceitual da IHD, mapeamento dos princípios teóricos fundamentais, metodologias de mensuração aplicáveis e identificação de lacunas (termos: \textit{``framework''}, \textit{``legibility''}, \textit{``agency''}, \textit{``negotiability''}).}
+    \item[] \hl{\textbf{Controle:} Seleção sistemática priorizando trabalhos que proponham (re)formulações de princípios de IHD, apresentem aplicações práticas ou discutam métodos de avaliação (termos: \textit{``case study''}, \textit{``evaluation method''}).}
+    \item[] \hl{\textbf{Resultados:} Sistematização do conhecimento sobre métodos e técnicas empregados e o mapeamento das lacunas frequentes na literatura (termos: \textit{``usability''}, \textit{``quality assessment''}).}
+    \item[] \hl{\textbf{Aplicação/Contexto:} Pesquisadores de IHD e IHC, além de profissionais da indústria que buscam compreender a aplicação e mensuração desses princípios na prática, com ênfase no contexto de cidades inteligentes que fundamenta a etapa empírica desta dissertação (termos: \textit{``smart cities''}, \textit{``urban''}).}
 \end{itemize}
 
     \subsection{Estratégia de Busca}
@@ -1254,7 +1258,7 @@ String de busca & ``TITLE-ABS-KEY ((``Human-Data Interaction'')) AND PUBYEAR $>$
 
 \subsubsection{Aplicação dos Critérios de Inclusão e Exclusão}
 
-    A partir do retorno inicial de \textbf{193} artigos, o processo de triagem resultou na inclusão de \textbf{84} trabalhos e na exclusão de \textbf{109}. Esse cenário evidencia uma taxa de retenção de aproximadamente \textbf{43,5\%} das publicações recuperadas. Mais do que um reflexo quantitativo, esse índice revela uma característica importante da literatura atual sobre o tema: uma parcela expressiva dos trabalhos foi desclassificada por abordar a Interação Humano-Dados apenas de forma superficial (em conformidade com o critério \textbf{CE2}) ou por empregar o acrônimo em contextos não correlatos à interação humana, como em discussões estritamente voltadas a \textit{hardware} e interações em baixo nível computacional (critério \textbf{CE4}). 
+    A partir do retorno inicial de \textbf{193} artigos, o processo de triagem resultou na inclusão de \hl{\textbf{81}} trabalhos e na exclusão de \hl{\textbf{112}}. Esse cenário evidencia uma taxa de retenção de aproximadamente \hl{\textbf{42,0\%}} das publicações recuperadas. Mais do que um reflexo quantitativo, esse índice revela uma característica importante da literatura atual sobre o tema: uma parcela expressiva dos trabalhos foi desclassificada por abordar a Interação Humano-Dados apenas de forma superficial (em conformidade com o critério \textbf{CE2}) ou por empregar o acrônimo em contextos não correlatos à interação humana, como em discussões estritamente voltadas a \textit{hardware} e interações em baixo nível computacional (critério \textbf{CE4}). \hl{Uma rodada adicional de refinamento desses critérios, motivada pela revisão por pares do artigo derivado desta RSL, reforçou o rigor na aplicação do critério CE2 e reclassificou 3 trabalhos originalmente incluídos da base Scopus, o que explica o ajuste dos totais desta tabela em relação a versões anteriores deste documento.}
 
     Esse comportamento indica que, embora a nomenclatura seja frequente nas chaves de busca, há um alto volume de resultados que não aprofundam os princípios teóricos, as métricas ou os \textit{frameworks} práticos de avaliação. A aplicação rigorosa dos filtros metodológicos mitigou esse ruído, assegurando que apenas as pesquisas com contribuições empíricas e metodológicas sólidas avançassem para a etapa de análise.
     \clearpage
@@ -1270,19 +1274,19 @@ String de busca & ``TITLE-ABS-KEY ((``Human-Data Interaction'')) AND PUBYEAR $>$
 \midrule
 \textbf{1. Busca Inicial} & Artigos identificados na base de dados Scopus & 193 \\
 \midrule
-\textbf{2. Exclusões} & \textbf{Total de artigos excluídos} & \textbf{109} \\
+\textbf{2. Exclusões} & \textbf{Total de artigos excluídos} & \hl{\textbf{112}} \\
 & \hspace{0.5cm}• Duplicatas (critério CE9) & 3 \\
 & \hspace{0.5cm}• Documentos incompletos (critério CE6) & 27 \\
 & \hspace{0.5cm}• Acesso restrito (critério CE7) & 11 \\
-& \hspace{0.5cm}• Abordagem superficial de IHD (critério CE2) & 62 \\
+& \hspace{0.5cm}• Abordagem superficial de IHD (critério CE2) & \hl{65} \\
 & \hspace{0.5cm}• Contexto médico (critério CE8) & 19 \\
 \midrule
-\textbf{3. Inclusões} & \textbf{Total de artigos incluídos} & \textbf{84} \\
-& \hspace{0.5cm}• Atenderam aos critérios de inclusão & 84 \\
+\textbf{3. Inclusões} & \textbf{Total de artigos incluídos} & \hl{\textbf{81}} \\
+& \hspace{0.5cm}• Atenderam aos critérios de inclusão & \hl{81} \\
 \bottomrule
 \end{tabularx}
 \vspace{0.2cm}
-\footnotesize{*Nota: A soma das ocorrências dos critérios de exclusão (122) é superior ao total de artigos excluídos (109), pois um mesmo artigo pode ter sido desclassificado por múltiplos critérios simultaneamente.}
+\footnotesize{*Nota: A soma das ocorrências dos critérios de exclusão (\hl{125}) é superior ao total de artigos excluídos (\hl{112}), pois um mesmo artigo pode ter sido desclassificado por múltiplos critérios simultaneamente.}
 \end{table}
 
     A fim de complementar a busca primária e capturar detalhes metodológicos que frequentemente não constam apenas nos resumos, a base de dados \textit{Science Direct} foi integrada ao protocolo. A escolha desse repositório justificou-se pela sua capacidade de varredura em texto integral e pelo seu acervo de periódicos voltados a sistemas de informação e ecossistemas urbanos. A Tabela \ref{tab:detalhes_busca_sd} apresenta os parâmetros e a \textit{string} específica aplicada a essa base durante a consulta.
@@ -1319,23 +1323,23 @@ String de busca & Title, abstract, keywords: ``Human-Data Interaction'' \\
 \midrule
 \textbf{1. Busca Secundária} & Artigos identificados na base de dados Science Direct & 52 \\
 \midrule
-\textbf{2. Exclusões} & \textbf{Total de artigos excluídos} & \textbf{37} \\
+\textbf{2. Exclusões} & \textbf{Total de artigos excluídos} & \hl{\textbf{38}} \\
 & \hspace{0.5cm}• Duplicatas (critério CE9) & 14 \\
 & \hspace{0.5cm}• Documentos incompletos (critério CE6) & 0 \\
 & \hspace{0.5cm}• Acesso restrito (critério CE7) & 0 \\
-& \hspace{0.5cm}• Abordagem superficial de IHD (critério CE2) & 12 \\
+& \hspace{0.5cm}• Abordagem superficial de IHD (critério CE2) & \hl{13} \\
 & \hspace{0.5cm}• Termo em contexto não relacionado (critério CE4) & 12 \\
 & \hspace{0.5cm}• Contexto médico (critério CE8) & 12 \\
 \midrule
-\textbf{3. Inclusões} & \textbf{Total de artigos incluídos} & \textbf{15} \\
-& \hspace{0.5cm}• Atenderam aos critérios de inclusão (CI) & 15 \\
+\textbf{3. Inclusões} & \textbf{Total de artigos incluídos} & \hl{\textbf{14}} \\
+& \hspace{0.5cm}• Atenderam aos critérios de inclusão (CI) & \hl{14} \\
 \bottomrule
 \end{tabularx}
 \vspace{0.2cm}
-\footnotesize{*Nota: A soma das ocorrências dos critérios de exclusão (50) é superior ao total de artigos excluídos (37), pois um mesmo artigo pode ter sido desclassificado por múltiplos critérios simultaneamente.}
+\footnotesize{*Nota: A soma das ocorrências dos critérios de exclusão (\hl{51}) é superior ao total de artigos excluídos (\hl{38}), pois um mesmo artigo pode ter sido desclassificado por múltiplos critérios simultaneamente.}
 \end{table}
 
-    Conforme evidenciado pela matriz de seleção, a análise resultou na exclusão de \textbf{37} documentos. Os principais fatores de desclassificação compreenderam o alto índice de sobreposição (duplicatas) em relação à busca primária no Scopus (critério \textbf{CE9}, com 14 ocorrências), bem como a presença de abordagens em que a temática figurava de modo superficial (critério \textbf{CE2}) ou deslocada do contexto de interação humana (critério \textbf{CE4}). Destaca-se, ainda, a exclusão de estudos estritamente voltados à área médica ou clínica (critério \textbf{CE8}), contabilizando 12 ocorrências para cada um desses três últimos cenários. A partir desse rigoroso filtro, consolidou-se a inclusão de \textbf{15} trabalhos provenientes da \textit{Science Direct} no \textit{corpus} da revisão.
+    Conforme evidenciado pela matriz de seleção, a análise resultou na exclusão de \hl{\textbf{38}} documentos. Os principais fatores de desclassificação compreenderam o alto índice de sobreposição (duplicatas) em relação à busca primária no Scopus (critério \textbf{CE9}, com 14 ocorrências), bem como a presença de abordagens em que a temática figurava de modo superficial (critério \textbf{CE2}) ou deslocada do contexto de interação humana (critério \textbf{CE4}). Destaca-se, ainda, a exclusão de estudos estritamente voltados à área médica ou clínica (critério \textbf{CE8}), contabilizando 12 ocorrências para cada um desses três últimos cenários. A partir desse rigoroso filtro, consolidou-se a inclusão de \hl{\textbf{14}} trabalhos provenientes da \textit{Science Direct} no \textit{corpus} da revisão.
 
     Para complementar o contingente internacional consolidado nas etapas anteriores, e tendo em vista que o escopo empírico desta pesquisa direciona-se ao cenário urbano de São Paulo, o Portal de Periódicos da \textit{CAPES} foi incluído como terceira fonte de dados. A integração desse repositório atendeu ao propósito estratégico de mapear a produção científica nacional, aproximando o levantamento da literatura às especificidades sociotécnicas e às dinâmicas urbanas inerentes à realidade brasileira. Os detalhes desta consulta constam na Tabela \ref{tab:detalhes_busca_capes}.
 
@@ -1482,7 +1486,7 @@ A execução da estratégia de busca, conforme os parâmetros detalhados na Tabe
 \end{tabularx}
 \end{table}
 
-    Com a conclusão deste levantamento nas cinco bases selecionadas, o montante bruto de busca totalizou \textbf{268} documentos. Após a etapa rigorosa de triagem e eliminação de duplicatas detalhada ao longo desta subseção, consolidou-se um \textit{corpus} final de \textbf{102} documentos, que seguirão para a fase de extração de dados e leitura na íntegra.
+    Com a conclusão deste levantamento nas cinco bases selecionadas, o montante bruto de busca totalizou \textbf{268} documentos. Após a etapa rigorosa de triagem e eliminação de duplicatas detalhada ao longo desta subseção, consolidou-se um \textit{corpus} final de \hl{\textbf{98}} documentos, que seguirão para a fase de extração de dados e leitura na íntegra.
 
 
      \subsubsection{Aplicação dos critério de qualidade}\ref{crit:quali}
@@ -1491,9 +1495,9 @@ A execução da estratégia de busca, conforme os parâmetros detalhados na Tabe
 
     Concluída a etapa de aplicação dos critérios de inclusão e exclusão, os estudos selecionados foram submetidos à avaliação de qualidade, visando mensurar o nível de profundidade e a relevância de cada trabalho para os eixos teóricos da pesquisa. Este filtro utilizou um sistema de pontuação de -1 a 3, cujos resultados individuais estão detalhados no Apêndice \ref{Apendice_C}, penalizando materiais sem revisão por pares e valorizando a capacidade dos artigos de integrar os temas centrais do estudo.
 
-    A análise revela um resultado importante quanto ao rigor metodológico do \textit{corpus} avaliado: dos \textbf{102} trabalhos pontuados nesta etapa, absolutamente nenhum recebeu pontuação negativa (critério \textit{a}) ou nula (critério \textit{b}). Isso confirma que todas as publicações retidas possuem validação acadêmica e oferecem contribuições concretas para o avanço da investigação.
+    A análise revela um resultado importante quanto ao rigor metodológico do \textit{corpus} avaliado: dos \hl{\textbf{98}} trabalhos pontuados nesta etapa, absolutamente nenhum recebeu pontuação negativa (critério \textit{a}) ou nula (critério \textit{b}). Isso confirma que todas as publicações retidas possuem validação acadêmica e oferecem contribuições concretas para o avanço da investigação.
 
-    A distribuição das pontuações, sintetizada na Tabela \ref{tab:resumo_qualidade}, evidencia a alta aderência dos estudos aos eixos teóricos propostos. A maior parcela dos artigos (\textbf{42} estudos, representando 41,2\%) alcançou a nota máxima (\emph{3}), destacando-se por apresentar abordagens integradas que articulam três ou mais temas principais da pesquisa. Os demais trabalhos também demonstraram solidez, dividindo-se entre a nota \emph{1} (\textbf{33} artigos, 32,3\%), que explora recortes mais específicos de apenas um tema, e a nota \emph{2} (\textbf{27} artigos, 26,5\%), que conecta pares temáticos. Esse cenário bibliográfico atesta a excelência das fontes que fundamentam este trabalho e reforça a pertinência da pesquisa em desenvolver uma visão conectada e multidimensional sobre a Interação Humano-Dados.
+    A distribuição das pontuações, sintetizada na Tabela \ref{tab:resumo_qualidade}, evidencia a alta aderência dos estudos aos eixos teóricos propostos. A maior parcela dos artigos (\hl{\textbf{41}} estudos, representando \hl{41,8\%}) alcançou a nota máxima (\emph{3}), destacando-se por apresentar abordagens integradas que articulam três ou mais temas principais da pesquisa. Os demais trabalhos também demonstraram solidez, dividindo-se entre a nota \emph{1} (\hl{\textbf{30}} artigos, \hl{30,6\%}), que explora recortes mais específicos de apenas um tema, e a nota \emph{2} (\textbf{27} artigos, \hl{27,6\%}), que conecta pares temáticos. Esse cenário bibliográfico \hl{atesta a qualidade das fontes que fundamentam este trabalho e reforça a pertinência da pesquisa em desenvolver uma visão conectada sobre a Interação Humano-Dados.}
 
 \begin{table}[htpb]
     \centering
@@ -1505,11 +1509,11 @@ A execução da estratégia de busca, conforme os parâmetros detalhados na Tabe
         \midrule
         (-1) Sem revisão por pares & 0 & 0,0\% \\
         (0) Sem contribuição relevante & 0 & 0,0\% \\
-        (1) Apenas um tema principal & 33 & 32,3\% \\
-        (2) Dois temas principais & 27 & 26,5\% \\
-        (3) Três ou mais temas principais & 42 & 41,2\% \\
+        (1) Apenas um tema principal & \hl{30} & \hl{30,6\%} \\
+        (2) Dois temas principais & 27 & \hl{27,6\%} \\
+        (3) Três ou mais temas principais & \hl{41} & \hl{41,8\%} \\
         \midrule
-        \textbf{Total} & \textbf{102} & \textbf{100,0\%} \\
+        \textbf{Total} & \hl{\textbf{98}} & \textbf{100,0\%} \\
         \bottomrule
     \end{tabular}
     
@@ -1521,13 +1525,13 @@ A execução da estratégia de busca, conforme os parâmetros detalhados na Tabe
     
  \subsection{Triagem por título e resumo}
 
-A etapa de triagem e a aplicação rigorosa dos critérios de elegibilidade resultaram na inclusão de \textbf{102} trabalhos a partir de um montante inicial de \textbf{268} documentos avaliados nas diversas bases de dados. Essa taxa de retenção de aproximadamente 38\% reflete um filtro metodológico essencial para consolidar um \textit{corpus} robusto. Os artigos incluídos combinaram múltiplos critérios de elegibilidade, evidenciando uma integração entre as abordagens teóricas e práticas no campo da IHD. Verificou-se que a maioria dos trabalhos selecionados atendeu a pelo menos três critérios simultaneamente, especialmente aqueles que articulavam a proposição de \textit{frameworks} práticos (\textit{critério b}), a apresentação de resultados empíricos (\textit{critério d}) e a validação por revisão por pares (\textit{critério g}).
+A etapa de triagem e a aplicação rigorosa dos critérios de elegibilidade resultaram na inclusão de \hl{\textbf{98}} trabalhos a partir de um montante inicial de \textbf{268} documentos avaliados nas diversas bases de dados. Essa taxa de retenção de aproximadamente \hl{36,6\%} reflete um filtro metodológico para consolidar um \textit{corpus} robusto. Os artigos incluídos combinaram múltiplos critérios de elegibilidade, evidenciando uma integração entre as abordagens teóricas e práticas no campo da IHD. Verificou-se que a maioria dos trabalhos selecionados atendeu a pelo menos três critérios simultaneamente, especialmente aqueles que articulavam a proposição de \textit{frameworks} práticos (\textit{critério b}), a apresentação de resultados empíricos (\textit{critério d}) e a validação por revisão por pares (\textit{critério g}).
 
 Esta convergência indica que a literatura em IHD consegue transitar da fundamentação conceitual para aplicações validadas, reforçando o caráter interdisciplinar da área. A presença significativa do critério relacionado ao desenvolvimento de métricas de avaliação (\textit{critério c}) revela, ainda, um esforço acadêmico crescente em estabelecer métodos para aferir a eficácia das soluções, como testes de usabilidade e análise de comportamento. Essa maturidade metodológica é essencial para sustentar a análise crítica proposta nesta pesquisa.
 
 O recorte temporal também se mostrou um fator determinante na triagem, com a quase totalidade dos trabalhos incluídos publicados entre 2014 e 2024 (\textit{critério h}). Este dado reflete a emergência recente do tema e a sua consolidação progressiva na última década, acompanhando a evolução da governança de dados na sociedade contemporânea. A atualidade da base bibliográfica garante que os princípios de legibilidade e agência discutidos estejam alinhados com as tecnologias e os desafios de privacidade vigentes.
 
-Por outro lado, os motivos de exclusão dos \textbf{166} trabalhos rejeitados seguiram padrões metodológicos claros. Uma parte das exclusões decorreu de barreiras de acessibilidade, devido à indisponibilidade de documentos na íntegra (\textit{critério n}) ou à necessidade de acesso pago a bibliotecas restritas (\textit{critério o}). Tais limitações, embora representem um desafio estrutural na disseminação do conhecimento acadêmico, não comprometeram a densidade do \textit{corpus} final devido ao alto volume de trabalhos abertos e qualificados retidos.
+Por outro lado, os motivos de exclusão dos \hl{\textbf{170}} trabalhos rejeitados seguiram padrões metodológicos claros. Uma parte das exclusões decorreu de barreiras de acessibilidade, devido à indisponibilidade de documentos na íntegra (\textit{critério n}) ou à necessidade de acesso pago a bibliotecas restritas (\textit{critério o}). Tais limitações, embora representem um desafio estrutural na disseminação do conhecimento acadêmico, não comprometeram a densidade do \textit{corpus} final devido ao alto volume de trabalhos abertos e qualificados retidos.
 
 Por fim, o maior impacto no volume de exclusões derivou da aplicação dos filtros temáticos. Houve um descarte expressivo de estudos que tratavam a IHD de forma apenas superficial (\textit{critério j}) ou que empregavam o acrônimo em contextos não relacionados à interação humana (\textit{critério l}). Além disso, o direcionamento estrito para a área médica e de informática em saúde (\textit{critério p}) concentrou um número substancial de rejeições nas bases primárias. Somada à remoção rigorosa de duplicatas entre os repositórios (\textit{critério q}), essa limpeza foi imperativa para assegurar que o referencial teórico estivesse fundamentalmente focado no usuário comum e no desenvolvimento de aplicações urbanas. O percurso integral de identificação, triagem e seleção, norteado pelas diretrizes metodológicas do protocolo PRISMA, encontra-se sistematizado na Figura \ref{fig:fluxo_prisma}.
 
@@ -1536,7 +1540,9 @@ Por fim, o maior impacto no volume de exclusões derivou da aplicação dos filt
     \caption{Fluxo de Seleção dos Estudos --- PRISMA 2020}
     \label{fig:fluxo_prisma}
     \includegraphics[width=0.9\textwidth]{PPgSI-modeloQualiDisserTeseLatex/Figuras/prisma_flow_v4.jpg}
-    
+    % \hl{PENDENTE: esta figura é uma imagem rasterizada (JPG) com os números antigos do corpus (268/166/102);
+    % ela precisa ser regenerada manualmente (ex.: no mesmo TikZ usado no Artigo.tex) para refletir
+    % 268 identificados, 170 excluídos na triagem e 98 no corpus final, antes da versão definitiva.}
     \vspace{0.2cm}
     {\small Fonte: Elaborada pela autora.}
 \end{figure}
@@ -1550,18 +1556,18 @@ Por fim, o maior impacto no volume de exclusões derivou da aplicação dos filt
  
  \subsection{Avaliação dos dados}
 
-    Após a triagem inicial, as 102 publicações que compuseram o \textit{corpus} final de análise foram submetidas a uma matriz de avaliação de qualidade para mensurar a profundidade das suas contribuições. Os resultados demonstram a relevância acadêmica do material selecionado, uma vez que nenhum dos artigos foi classificado com pontuações negativas ou nulas, correspondentes aos critérios \textit{CQ1} e \textit{CQ2}. A inexistência de trabalhos sem revisão por pares ou sem contribuição relevante revela o rigor dos processos de busca e filtragem realizados nas etapas anteriores.
+    Após a triagem inicial, as \hl{98} publicações que compuseram o \textit{corpus} final de análise foram submetidas a uma matriz de avaliação de qualidade para mensurar a profundidade das suas contribuições. Os resultados \hl{indicam} a relevância acadêmica do material selecionado, uma vez que nenhum dos artigos foi classificado com pontuações negativas ou nulas, correspondentes aos critérios \textit{CQ1} e \textit{CQ2}. A inexistência de trabalhos sem revisão por pares ou sem contribuição relevante \hl{sugere} o rigor dos processos de busca e filtragem realizados nas etapas anteriores.
 
     A distribuição quantitativa das avaliações indica que um segmento de \textbf{27} artigos atingiu a pontuação \textbf{2} \textit{(CQ4)}. Estes trabalhos exercem um papel articulador na revisão sistemática, pois conseguem tratar simultaneamente dois dos temas principais da pesquisa, estabelecendo um diálogo produtivo entre a teoria da IHD e a sua implementação prática. São estudos que oferecem perspectivas valiosas para compreender como princípios — a exemplo da negociabilidade — são operacionalizados em sistemas reais, servindo de transição entre a literatura técnica hiperfocada e as abordagens sistêmicas mais complexas.
     %A distribuição quantitativa das avaliações mostra que uma parcela importante do acervo, composta por \textbf{27} artigos, atingiu a pontuação \textbf{2} \textit{(CQ4)}. Estes trabalhos representam a espinha dorsal desta revisão sistemática, pois conseguem tratar simultaneamente dois dos temas principais da pesquisa, estabelecendo um diálogo produtivo entre a teoria da IHD e a sua implementação prática. São estudos que oferecem a base necessária para compreender como princípios como a negociabilidade são operacionalizados em sistemas reais.
 
-    Por sua vez, um grupo de \textbf{33} artigos foi classificado com a pontuação \textbf{1} \textit{(CQ3)}. Embora focados em apenas um dos eixos temáticos principais, estes trabalhos mantêm expressiva relevância analítica, pois representam a literatura de especialização em nichos específicos delineados no protocolo. Tais pesquisas fornecem subsídios técnicos e teóricos aprofundados sobre facetas isoladas da interação, revelando-se fundamentais para compor as análises sobre transparência e letramento de dados exigidas por esta dissertação.
+    Por sua vez, um grupo de \hl{\textbf{30}} artigos foi classificado com a pontuação \textbf{1} \textit{(CQ3)}. Embora focados em apenas um dos eixos temáticos principais, estes trabalhos mantêm relevância analítica, pois representam a literatura de especialização em nichos específicos delineados no protocolo. Tais pesquisas fornecem subsídios técnicos e teóricos sobre facetas isoladas da interação, contribuindo para compor as análises sobre transparência e letramento de dados exigidas por esta dissertação.
     %Em contrapartida, um grupo de \textbf{33} artigos foi classificado com a pontuação \textbf{1} \textit{(CQ3)}. Embora focados em apenas um dos temas principais, estes trabalhos não possuem menor importância; eles representam a literatura de especialização profunda em nichos específicos do protocolo. Tais pesquisas fornecem detalhes técnicos e teóricos exaustivos sobre facetas isoladas da interação, sendo fundamentais para compor as análises sobre transparência e literacia de dados que esta dissertação exige.
 
-    No estrato superior de qualidade e representando a maior parcela do acervo, identificou-se um conjunto de \textbf{42} artigos que alcançaram a pontuação máxima \textbf{3} \textit{(CQ5)}. Estes estudos caracterizam-se por articular três ou mais eixos temáticos principais de forma integrada, unindo princípios teóricos, desenvolvimento de métricas e evidências empíricas em um único corpo de trabalho. Devido à sua natureza multidimensional, estes trabalhos de maior robustez servirão como os principais alicerces para a construção das diretrizes críticas de IHD voltadas aos aplicativos utilizados no contexto urbano de São Paulo.
+    No estrato superior de qualidade e representando a maior parcela do acervo, identificou-se um conjunto de \hl{\textbf{41}} artigos que alcançaram a pontuação máxima \textbf{3} \textit{(CQ5)}. Estes estudos caracterizam-se por articular três ou mais eixos temáticos principais de forma integrada, unindo princípios teóricos, desenvolvimento de métricas e evidências empíricas em um único corpo de trabalho. Devido a essa característica, estes trabalhos servirão como referência central para a construção das diretrizes críticas de IHD voltadas aos aplicativos utilizados no contexto urbano de São Paulo.
     %No topo da pirâmide de qualidade e representando a maior parcela do acervo, identificou-se um conjunto de \textbf{42} artigos que alcançaram a pontuação máxima \textbf{3} \textit{(CQ5)}. Estes estudos são caracterizados por tratar três ou mais temas principais de forma orgânica, integrando princípios teóricos, desenvolvimento de métricas e evidências empíricas em um único corpo de trabalho. Devido à sua natureza multidimensional, estes artigos de excelência servirão como os principais pilares para a construção das diretrizes críticas de IHD voltadas aos aplicativos usados em São Paulo.
 
-    Em suma, a transição da etapa de triagem para a avaliação qualitativa consolidou um referencial teórico robusto e diversificado. A predominância de estudos com pontuação máxima \textbf{3}, acompanhada por contribuições especializadas de nível \textbf{1} e trabalhos articuladores de nível \textbf{2}, corrobora a adequação do protocolo de revisão sistemática adotado. Este \textit{corpus} estruturado viabilizará uma análise crítica fundamentada em evidências científicas de alto rigor e alinhada ao escopo interdisciplinar da pesquisa.
+    Em suma, a transição da etapa de triagem para a avaliação qualitativa consolidou um referencial teórico diversificado. A predominância de estudos com pontuação máxima \textbf{3}, acompanhada por contribuições especializadas de nível \textbf{1} e trabalhos articuladores de nível \textbf{2}, \hl{é compatível com} a adequação do protocolo de revisão sistemática adotado. Este \textit{corpus} estruturado \hl{busca viabilizar} uma análise crítica alinhada ao escopo interdisciplinar da pesquisa.
     
     %Após a triagem inicial, as 102 publicações que compuseram o \textit{corpus} final de análise foram submetidas a uma matriz de avaliação de qualidade para mensurar a profundidade das suas contribuições. Os resultados demonstram a relevância acadêmica do material selecionado, uma vez que nenhum dos artigos foi classificado com pontuações negativas ou nulas, correspondentes aos critérios \textit{(a)} e \textit{(b)}. A inexistência de trabalhos sem revisão por pares ou sem contribuição relevante revela o rigor dos processos de busca e filtragem realizados nas etapas anteriores.
 
@@ -1576,19 +1582,20 @@ Por fim, o maior impacto no volume de exclusões derivou da aplicação dos filt
 
  \subsection{Síntese dos artigos}\label{SinteseArtigos}
 
-    Antes de adentrar a análise temática das contribuições literárias, é pertinente estabelecer o panorama temporal e a origem das 102 publicações que compõem o \textit{corpus} final desta Revisão Sistemática da Literatura. A Figura \ref{fig:distribuicao_ano} ilustra a distribuição dos estudos ao longo da última década, estratificados pelas bases de dados primárias.
+    Antes de adentrar a análise temática das contribuições literárias, é pertinente estabelecer o panorama temporal e a origem das \hl{98} publicações que compõem o \textit{corpus} final desta Revisão Sistemática da Literatura. A Figura \ref{fig:distribuicao_ano} ilustra a distribuição dos estudos ao longo da última década, estratificados pelas bases de dados primárias.
 
 \begin{figure}[htb]
     \centering
-    \caption{Distribuição dos artigos selecionados por ano e fonte (2014--2024)}
+    \caption{Distribuição dos \hl{98} artigos selecionados por ano e fonte (2014--2024)}
     \label{fig:distribuicao_ano}
-    \includegraphics[width=0.9\textwidth]{PPgSI-modeloQualiDisserTeseLatex/Figuras/distribuicao_artigos_por_ano_empilhado.png}
-    
+    \includegraphics[width=0.9\textwidth]{PPgSI-modeloQualiDisserTeseLatex/Figuras/distribuicao_artigos_por_ano_empilhado_v2.png}
+    % \hl{Imagem atualizada: substituída pelo gráfico correspondente ao corpus de 98 estudos (mesmo dado usado no Artigo.tex).}
+
     \vspace{0.2cm}
     {\small Fonte: Elaborada pela autora.}
 \end{figure}
 
-    A observação do fluxo cronológico revela que, embora as primeiras indexações datem de 2014, houve um salto expressivo na produção acadêmica a partir de 2020. Os anos de 2020 e 2021 concentram, juntos, o maior volume de publicações aprovadas (43 trabalhos), sugerindo um período de maturação e consolidação do interesse pelo escopo da IHD. Adicionalmente, sob a ótica dos repositórios, nota-se a predominância absoluta da base \textit{Scopus} na indexação do conhecimento de alto rigor, acompanhada por contribuições complementares da \textit{Science Direct} e pela captação de literatura cinzenta nacional emergente via Catálogo de Teses e Dissertações da CAPES.
+    A observação do fluxo cronológico revela que, embora as primeiras indexações datem de 2014, houve um salto expressivo na produção acadêmica a partir de 2020. Os anos de 2020 e 2021 concentram, juntos, \hl{um dos maiores volumes de publicações aprovadas (33 trabalhos, 33,7\% do \textit{corpus})}, sugerindo um período de maturação e consolidação do interesse pelo escopo da IHD\hl{, seguido por um novo crescimento entre 2022 e 2024 (46 trabalhos, 46,9\%), com pico em 2024}. Adicionalmente, sob a ótica dos repositórios, nota-se a predominância absoluta da base \textit{Scopus} na indexação do conhecimento de alto rigor (\hl{cerca de 82,7\% do \textit{corpus}}), acompanhada por contribuições complementares da \textit{Science Direct} e pela captação de literatura cinzenta nacional emergente via Catálogo de Teses e Dissertações da CAPES.
 
     Com este mapeamento cronológico e de fontes delineado, esta subseção apresenta uma síntese dos estudos selecionados na RSL, com foco na Interação Humano-Dados e seus princípios de Legibilidade, Agência e Negociabilidade, conforme o protocolo de pesquisa estabelecido. A análise, embora seja parcial, permitiu conhecer o estado da arte, identificar lacunas de conhecimento e responder às questões de pesquisa propostas
 
@@ -1844,7 +1851,7 @@ Por fim, o maior impacto no volume de exclusões derivou da aplicação dos filt
 
     Por sua vez, a \emph{negociabilidade} implica que os sistemas urbanos possuam flexibilidade para adaptação às preferências de privacidade contextuais \cite{DOWTHWAITE2024, Nelson2023}. A capacidade de negociar o compartilhamento é fundamental para o sucesso de iniciativas ambientais e para permitir que cidadãos independentes e conscientes utilizem dados urbanos na resolução de problemas complexos \cite{Belizario2023Interacao}. A integração de edifícios inteligentes neste ecossistema permite que a infraestrutura responda dinamicamente aos comportamentos dos habitantes, fator essencial para a sustentabilidade e eficiência energética em escala municipal \cite{bavaresco2019technological}. 
 
-    Além da infraestrutura, a negociabilidade permite que moradores sugiram a inclusão de novas fontes de dados em plataformas oficiais \cite{Elhamdadi2022, Xiao2021, Koesten2021, Hornung2015}. O uso de interfaces de voz transforma termos estáticos em diálogos dinâmicos \cite{Sailaja2024334, Chowdhury2016}. Em ecossistemas complexos, a atuação de corretores de conhecimento (\textit{knowledge brokers}) é indispensável para que o usuário não perca o rastro de quem manipula a sua vida digital \cite{Seidelin2018}.
+    Além da infraestrutura, a negociabilidade permite que moradores sugiram a inclusão de novas fontes de dados em plataformas oficiais \cite{Elhamdadi2022, Xiao2021, Koesten2021, Hornung2015}. O uso de interfaces de voz transforma termos estáticos em diálogos dinâmicos \cite{Sailaja2024334, Chowdhury2016}. Em ecossistemas complexos, a atuação de corretores de conhecimento (\textit{knowledge brokers}) \hl{contribui para} que o usuário não perca o rastro de quem manipula a sua vida digital \cite{Seidelin2018}.
 
     Para que todas estas salvaguardas sejam efetivas, o planejamento urbano deve rejeitar posturas extrativistas unilaterais e apoiar-se na IHD para auxiliar na tomada de decisão governamental baseada em dados \cite{Belizario2023Interacao}. A tecnologia precisa atuar como um assistente invisível que mantém as ``histórias humanas'' (\textit{human stories}) por trás dos números, evitando a perda da identidade institucional frente aos algoritmos \cite{calvetti2024human, Briggs2021, Calvetti2021173}. A integração ética com Inteligência Artificial Generativa e a consciência sobre a massiva pegada de carbono das infraestruturas revelam-se imperativas \cite{durango2024data, Stead2022, Turkay2021}. Por fim, a formalização do ensino da IHD assegura a formação de profissionais que não aprofundem as disparidades sociais e digitais, consolidando uma cidadania urbana transparente e resiliente \cite{coleti2024human, Kurze2023, hayes2024making, Refat2023, Chatzimichali2021160, Lindley2020}.
     %__________________________________________________________
@@ -2140,7 +2147,17 @@ Por fim, o maior impacto no volume de exclusões derivou da aplicação dos filt
     %Embora alguns trabalhos não aprofundem essas questões diretamente, a literatura reconhece que a distribuição desigual do conhecimento cria o abismo entre os "ricos" e os "pobres em dados" \cite{Nelson2023, Hayes2022}. Ignorar a geopolítica da informação pode levar à construção de sistemas não equitativos e à normatividade algorítmica excludente \cite{Jandric2023, Konomi2022}. Portanto, a formação de profissionais cientes da diversidade cultural, como proposto por \citeonline{coleti2024human}, é essencial para o avanço das infraestruturas de Smart Cities \cite{Kurze2023}. Com o objetivo de apresentar de forma clara e sintética essas questões, elaborou-se uma Tabela, disponível no Apêndice \ref{Apendice_D}, que consolida os resultados desta revisão.
 
 
-    \subsection{Conclusões finais}\label{ConcluFinaisRSL} 
+    \hl{\subsection{Ameaças à Validade}\label{sec:ameacas}}
+
+    \hl{A condução deste mapeamento sistemático seguiu o protocolo de} \citeonline{KITCHENHAM2013} \hl{visando conferir transparência ao processo. Contudo, é fundamental reconhecer ameaças inerentes ao método que podem delimitar o alcance dos achados.}
+
+    \hl{No que tange à \textbf{validade interna}, esta pesquisa reconhece o viés subjetivo inerente às etapas de triagem e extração, conduzidas sem um protocolo formal de dupla triagem cega e independente para conciliação de casos de fronteira. A decisão de incluir ou excluir um artigo---especialmente na aplicação de critérios que exigem julgamento de valor, como a distinção entre uma ``contribuição teórica robusta'' e uma ``menção superficial'' (CE2)---é influenciada pela perspectiva individual da pesquisadora, mitigada pela escoragem sistemática da Avaliação de Qualidade (Tabela~}\ref{tab:resumo_qualidade}\hl{), cujos artefatos de pontuação por artigo estão documentados no Apêndice~}\ref{Apendice_C}\hl{ e podem ser auditados.}
+
+    \hl{Quanto à \textbf{validade de constructo}, a principal ameaça reside na especificidade da \textit{string} de busca. Embora o termo ``Human-Data Interaction'' seja o descritor central da área, sua escolha como eixo principal pode ter omitido estudos que discutem princípios análogos (como agência e legibilidade) sob outras nomenclaturas (ex.: ``user-centric data'' ou ``soberania digital''), dada a fluidez terminológica de um campo interdisciplinar em consolidação. Cabe destacar que essa omissão não decorre necessariamente de uma limitação da indexação da Scopus em si, mas sim da recuperabilidade de um estudo frente a uma \textit{string} de busca específica: um trabalho tecnicamente indexado pode não ser retornado por uma consulta \textit{TITLE-ABS-KEY} se seus autores tiverem optado por terminologia distinta da adotada nesta revisão.}
+
+    \hl{Por fim, a \textbf{validade externa} é delimitada pela exclusão deliberada de literaturas cinzentas internacionais, consequência direta do critério \textbf{CI7} (revisão por pares) e do protocolo de RSL adotado} \citeonline{KITCHENHAM2013}\hl{, que priorizam o rigor e a replicabilidade da síntese em detrimento da cobertura de fontes não revisadas. Esse recorte, padrão em revisões sistemáticas, pode ter deixado de fora evidências práticas contidas em relatórios técnicos governamentais ou \textit{white papers} de tecnologia, relevantes para o contexto de Cidades Inteligentes. O reconhecimento dessa delimitação não invalida o \textit{corpus} de 98 estudos, mas delimita o alcance das generalizações propostas e é retomado, em conjunto com as limitações da etapa empírica desta pesquisa, na Seção~}\ref{sec:limitacoes}\hl{ ``Limitações''.}
+
+    \subsection{Conclusões finais}\label{ConcluFinaisRSL}
 
     Antes da consolidação da Interação Humano-Dados (IHD), a interação com sistemas era estritamente centrada na máquina. A Interação Humano-Computador (IHC) clássica focava na eficiência das interfaces, mas tratava o fluxo de dados como uma "caixa-preta", ignorando o contexto social e a carga cognitiva do usuário. Paralelamente, a governança operava sob modelos burocráticos de "Aviso e Escolha" (\textit{Notice and Choice}) e na simples exposição de dados abertos brutos. Essa lógica excludente transferia o ônus da compreensão para o indivíduo, sustentando a falsa premissa de que assinar longos termos de uso ou ter acesso a arquivos técnicos equivaleria à transparência.
 
@@ -2148,9 +2165,9 @@ Por fim, o maior impacto no volume de exclusões derivou da aplicação dos filt
 
     Apesar desse avanço teórico, persiste um distanciamento crítico em relação à prática da indústria. Enquanto a academia projeta sistemas centrados na autonomia humana, o mercado esbarra em severas barreiras de infraestrutura, escassez de equipes multidisciplinares e na dependência de bases legadas. A análise das lacunas na literatura revela que a ausência de um paradigma produtivo consolidado e a carência de heurísticas padronizadas resultam em plataformas pautadas estritamente na viabilidade técnica. Consequentemente, o distanciamento entre a visão dos desenvolvedores e a percepção dos cidadãos agrava a ansiedade algorítmica, perpetuando interfaces opacas que ignoram a experiência humana.
 
-    Além do abismo metodológico, a disciplina enfrenta um colapso ético e estrutural em cenários de alta complexidade. No âmbito corporativo, soluções atuais falham em equilibrar o segredo industrial com a soberania informacional do indivíduo. A validação empírica da IHD consolida o seu modelo fundacional como a principal lente analítica para diagnosticar essas falhas em ecossistemas sociotécnicos. Investigações práticas atestam a eficácia desse \textit{framework} ao hibridizá-lo com disciplinas contemporâneas, viabilizando desde a detecção de vieses algorítmicos em portais de segurança até o processamento local em plataformas de saúde. 
+    Além do abismo metodológico, a disciplina enfrenta \hl{desafios éticos e estruturais relevantes} em cenários de alta complexidade. No âmbito corporativo, soluções atuais falham em equilibrar o segredo industrial com a soberania informacional do indivíduo. \hl{A literatura analisada sugere que} o modelo fundacional da IHD \hl{oferece uma lente analítica útil} para diagnosticar essas falhas em ecossistemas sociotécnicos. Investigações práticas \hl{indicam} a eficácia desse \textit{framework} ao hibridizá-lo com disciplinas contemporâneas, viabilizando desde a detecção de vieses algorítmicos em portais de segurança até o processamento local em plataformas de saúde.
     
-    Contudo, a transição para o mercado esbarra em barreiras operacionais. Projetistas novatos relatam extremas dificuldades para aplicar artefatos conceituais complexos devido à ausência de diretrizes práticas acessíveis. Para mensurar e validar a eficácia da IHD diante dessa complexidade, a literatura evidencia uma transição metodológica profunda. A disciplina superou a dependência exclusiva de testes clássicos em laboratório — como o \textit{Think-Aloud} — para adotar um ecossistema multimodal. Passou-se a integrar monitoramento biométrico, métodos estatísticos avançados e economia comportamental, extrapolando o ambiente digital para simulações imersivas e testes \textit{in situ}. Conclui-se que apenas a convergência dessas metodologias sistêmicas viabiliza a legitimação ética da área.
+    Contudo, a transição para o mercado esbarra em barreiras operacionais. Projetistas novatos relatam extremas dificuldades para aplicar artefatos conceituais complexos devido à ausência de diretrizes práticas acessíveis. Para mensurar e validar a eficácia da IHD diante dessa complexidade, a literatura evidencia uma transição metodológica profunda. A disciplina superou a dependência exclusiva de testes clássicos em laboratório — como o \textit{Think-Aloud} — para adotar um ecossistema multimodal. Passou-se a integrar monitoramento biométrico, métodos estatísticos avançados e economia comportamental, extrapolando o ambiente digital para simulações imersivas e testes \textit{in situ}. \hl{Os achados sugerem que a convergência dessas metodologias contribui para a legitimação ética da área.}
 
     No nível do usuário, a eficácia dos princípios fundacionais não é universal, sendo profundamente condicionada pelas normas culturais e pela bagagem histórica. A literatura adverte que a infraestrutura de dados não é neutra; os métodos de coleta carregam vieses ideológicos. Quando ignoram essa pluralidade, os sistemas catalisam disparidades, perpetuando o viés de legado (\textit{legacy bias}). Nesse cenário, barreiras idiomáticas anulam o esforço de legibilidade, enquanto o histórico de marginalização reduz a confiança necessária para o exercício da agência. 
     
@@ -2158,7 +2175,7 @@ Por fim, o maior impacto no volume de exclusões derivou da aplicação dos filt
 
     Em macroescalas urbanas, a aplicação da IHD nas Cidades Inteligentes (\textit{Smart Cities}) representa a fronteira crítica e a síntese desses desafios. A tentativa de conciliar eficiência tecnológica e privacidade consolida-se como um problema perverso (\textit{wicked problem}). Diante da coleta massiva impulsionada pela \textit{Internet of Things} (IoT), a IHD propõe reconfigurar a infraestrutura municipal em uma "cidade cognitiva", onde os pilares atuam como escudos democráticos. A agência descentraliza a gestão da informação, garantindo a "Integridade de Intenção" e o direito inalienável de inibir o monitoramento passivo ambiental. Simultaneamente, a negociabilidade permite que moradores adaptem suas preferências de privacidade.
 
-    Para que essa malha urbana seja efetiva e equitativa, a administração pública deve rejeitar modelos extrativistas de "caixa-preta" e priorizar tecnologias cívicas que operem como assistentes invisíveis. Ao atrelar o co-\textit{design} à consciência ambiental, ao respeito regional e à segurança ciberfísica, a IHD consolida um novo paradigma ético. Em última análise, a adoção de seus princípios é a única via tática viável para evitar o aprofundamento das disparidades digitais, garantindo que a inovação tecnológica resulte em uma apropriação do espaço que seja transparente, democrática e resiliente.
+    Para que essa malha urbana seja efetiva e equitativa, a administração pública deve rejeitar modelos extrativistas de "caixa-preta" e priorizar tecnologias cívicas que operem como assistentes invisíveis. Ao atrelar o co-\textit{design} à consciência ambiental, ao respeito regional e à segurança ciberfísica, a IHD \hl{contribui para um paradigma ético alternativo}. \hl{Os achados desta revisão sugerem que} a adoção de seus princípios \hl{constitui uma via relevante} para \hl{mitigar} o aprofundamento das disparidades digitais, \hl{buscando} que a inovação tecnológica resulte em uma apropriação do espaço \hl{mais} transparente, democrática e resiliente.
     
 \chapter{Proposta de pesquisa}\label{cap:proposta}
 
@@ -2216,7 +2233,7 @@ Por fim, o maior impacto no volume de exclusões derivou da aplicação dos filt
 
     \subsection{Mapeamento das abordagens de IHD\protect\footnote{Abordagens mapeadas pela RSL da presente pesquisa}}
 
-    A análise dos 102 estudos retidos pela RSL identificou quatro categorias de abordagens que partem do framework fundacional de \citeonline{mortier2015humandatainteractionhumanface} e o desenvolvem em direções distintas. A síntese dessas categorias está apresentada nos Quadros~\ref{tab:abordagens-ihd-1} e~\ref{tab:abordagens-ihd-2}.
+    A análise dos \hl{98} estudos retidos pela RSL identificou quatro categorias de abordagens que partem do framework fundacional de \citeonline{mortier2015humandatainteractionhumanface} e o desenvolvem em direções distintas. A síntese dessas categorias está apresentada nos Quadros~\ref{tab:abordagens-ihd-1} e~\ref{tab:abordagens-ihd-2}.
 
     A primeira categoria reúne as \textbf{extensões diretas dos três pilares fundacionais}---legibilidade, agência e negociabilidade---que os operacionalizam em contextos específicos sem propor novos conceitos de base. Entre os estudos representativos dessa categoria estão \citeonline{Victorelli2020Human}, que consolidaram um conjunto de diretrizes de design organizadas nos três eixos para avaliação de interfaces de dados, e \citeonline{VICTORELLI2020Understanding}, que derivaram recomendações de IHD a partir de RSL e as validaram nos 
     portais governamentais paulistanos Pátio Digital, Portal Transparência e GeoSampa. \citeonline{chalhoub2024useful} construíram um framework de 32 heurísticas operacionais---organizadas em três categorias (Conhecimento, Consentimento e Comunicação)---focadas nos mecanismos de consentimento e controle de dados pessoais, e documentaram como a sobrecarga de informação e a fadiga cognitiva decorrente de solicitações repetidas de permissão comprometem sistematicamente a agência do usuário. \citeonline{Belizario2023Interacao} adaptaram 
@@ -2568,7 +2585,7 @@ Exemplo de como os dados serão sintetizados:
     A pesquisa concentra-se especificamente na interação com dados pessoais coletados diretamente dos usuários, não abrangendo análises sobre \textit{big data} anônimo ou tratamentos estatísticos agregados. Embora o tema se insira no contexto mais amplo das cidades inteligentes, o estudo não explora outros pilares característicos desse conceito, como infraestrutura digital, mobilidade sustentável ou eficiência energética. Essas delimitações não restringem a relevância dos achados---ao contrário, garantem o rigor analítico necessário para que as conclusões sobre a aplicação dos princípios de IHD em São Paulo sejam defensáveis e replicáveis em investigações futuras sobre outros contextos urbanos.
 
 
- \section{Limitações}
+ \section{Limitações}\label{sec:limitacoes}
 
     Esta pesquisa apresenta limitações de natureza metodológica que devem ser consideradas na interpretação dos resultados. A primeira diz respeito à avaliação heurística das aplicações: por ser conduzida por uma única avaliadora, o protocolo está sujeito a variações de julgamento que uma avaliação multipares reduziria. Estudos futuros poderão replicar o protocolo com múltiplos avaliadores para verificar a consistência inter avaliadores dos resultados obtidos.
 
