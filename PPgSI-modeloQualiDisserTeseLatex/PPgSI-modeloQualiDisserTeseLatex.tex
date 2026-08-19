@@ -1258,7 +1258,7 @@ String de busca & ``TITLE-ABS-KEY ((``Human-Data Interaction'')) AND PUBYEAR $>$
 
 \subsubsection{Aplicação dos Critérios de Inclusão e Exclusão}
 
-    A partir do retorno inicial de \textbf{193} artigos, o processo de triagem resultou na inclusão de \hl{\textbf{81}} trabalhos e na exclusão de \hl{\textbf{112}}. Esse cenário evidencia uma taxa de retenção de aproximadamente \hl{\textbf{42,0\%}} das publicações recuperadas. Mais do que um reflexo quantitativo, esse índice revela uma característica importante da literatura atual sobre o tema: uma parcela expressiva dos trabalhos foi desclassificada por abordar a Interação Humano-Dados apenas de forma superficial (em conformidade com o critério \textbf{CE2}) ou por empregar o acrônimo em contextos não correlatos à interação humana, como em discussões estritamente voltadas a \textit{hardware} e interações em baixo nível computacional (critério \textbf{CE4}). \hl{Uma rodada adicional de refinamento desses critérios, motivada pela revisão por pares do artigo derivado desta RSL, reforçou o rigor na aplicação do critério CE2 e reclassificou 3 trabalhos originalmente incluídos da base Scopus, o que explica o ajuste dos totais desta tabela em relação a versões anteriores deste documento.}
+    A partir do retorno inicial de \textbf{193} artigos, o processo de triagem resultou na inclusão de \hl{\textbf{81}} trabalhos e na exclusão de \hl{\textbf{112}}. Esse cenário evidencia uma taxa de retenção de aproximadamente \hl{\textbf{42,0\%}} das publicações recuperadas. Mais do que um reflexo quantitativo, esse índice revela uma característica importante da literatura atual sobre o tema: uma parcela expressiva dos trabalhos foi desclassificada por empregar o acrônimo em contextos não correlatos à interação humana, como em discussões estritamente voltadas a \textit{hardware} e interações em baixo nível computacional (critério \textbf{CE4}, \hl{51 ocorrências}), ou por abordar a Interação Humano-Dados apenas de forma superficial (critério \textbf{CE2}, \hl{38 ocorrências}). \hl{Os critérios de contexto médico (CE8, 33 ocorrências) e de indisponibilidade de texto completo (CE6, 31 ocorrências) também tiveram peso relevante na triagem desta base, conforme detalhado na Tabela~}\ref{tab:resumo_selecao_Scopus}\hl{, que reflete a auditoria mais recente dos artefatos de triagem desta RSL.}
 
     Esse comportamento indica que, embora a nomenclatura seja frequente nas chaves de busca, há um alto volume de resultados que não aprofundam os princípios teóricos, as métricas ou os \textit{frameworks} práticos de avaliação. A aplicação rigorosa dos filtros metodológicos mitigou esse ruído, assegurando que apenas as pesquisas com contribuições empíricas e metodológicas sólidas avançassem para a etapa de análise.
     \clearpage
@@ -1275,18 +1275,22 @@ String de busca & ``TITLE-ABS-KEY ((``Human-Data Interaction'')) AND PUBYEAR $>$
 \textbf{1. Busca Inicial} & Artigos identificados na base de dados Scopus & 193 \\
 \midrule
 \textbf{2. Exclusões} & \textbf{Total de artigos excluídos} & \hl{\textbf{112}} \\
-& \hspace{0.5cm}• Duplicatas (critério CE9) & 3 \\
-& \hspace{0.5cm}• Documentos incompletos (critério CE6) & 27 \\
-& \hspace{0.5cm}• Acesso restrito (critério CE7) & 11 \\
-& \hspace{0.5cm}• Abordagem superficial de IHD (critério CE2) & \hl{65} \\
-& \hspace{0.5cm}• Contexto médico (critério CE8) & 19 \\
+& \hspace{0.5cm}• Metodologia não replicável (critério CE1) & \hl{8} \\
+& \hspace{0.5cm}• Abordagem superficial de IHD (critério CE2) & \hl{38} \\
+& \hspace{0.5cm}• Visualização sem interação humana (critério CE3) & \hl{2} \\
+& \hspace{0.5cm}• Termo em contexto não relacionado (critério CE4) & \hl{51} \\
+& \hspace{0.5cm}• Publicado antes de 2014 (critério CE5) & \hl{1} \\
+& \hspace{0.5cm}• Documentos incompletos (critério CE6) & \hl{31} \\
+& \hspace{0.5cm}• Acesso restrito (critério CE7) & \hl{17} \\
+& \hspace{0.5cm}• Contexto médico (critério CE8) & \hl{33} \\
+& \hspace{0.5cm}• Duplicatas (critério CE9) & \hl{7} \\
 \midrule
 \textbf{3. Inclusões} & \textbf{Total de artigos incluídos} & \hl{\textbf{81}} \\
 & \hspace{0.5cm}• Atenderam aos critérios de inclusão & \hl{81} \\
 \bottomrule
 \end{tabularx}
 \vspace{0.2cm}
-\footnotesize{*Nota: A soma das ocorrências dos critérios de exclusão (\hl{125}) é superior ao total de artigos excluídos (\hl{112}), pois um mesmo artigo pode ter sido desclassificado por múltiplos critérios simultaneamente.}
+\footnotesize{*Nota: A soma das ocorrências dos critérios de exclusão (\hl{188}) é superior ao total de artigos excluídos (\hl{112}), pois um mesmo artigo pode ter sido desclassificado por múltiplos critérios simultaneamente. \hl{Valores auditados a partir das tabelas de triagem artigo a artigo (\textit{Scopus\_InclusaoExclusao\_parte1-5.csv}).}}
 \end{table}
 
     A fim de complementar a busca primária e capturar detalhes metodológicos que frequentemente não constam apenas nos resumos, a base de dados \textit{Science Direct} foi integrada ao protocolo. A escolha desse repositório justificou-se pela sua capacidade de varredura em texto integral e pelo seu acervo de periódicos voltados a sistemas de informação e ecossistemas urbanos. A Tabela \ref{tab:detalhes_busca_sd} apresenta os parâmetros e a \textit{string} específica aplicada a essa base durante a consulta.
@@ -1327,7 +1331,7 @@ String de busca & Title, abstract, keywords: ``Human-Data Interaction'' \\
 & \hspace{0.5cm}• Duplicatas (critério CE9) & 14 \\
 & \hspace{0.5cm}• Documentos incompletos (critério CE6) & 0 \\
 & \hspace{0.5cm}• Acesso restrito (critério CE7) & 0 \\
-& \hspace{0.5cm}• Abordagem superficial de IHD (critério CE2) & \hl{13} \\
+& \hspace{0.5cm}• Abordagem superficial de IHD (critério CE2) & \hl{12} \\
 & \hspace{0.5cm}• Termo em contexto não relacionado (critério CE4) & 12 \\
 & \hspace{0.5cm}• Contexto médico (critério CE8) & 12 \\
 \midrule
@@ -1336,7 +1340,7 @@ String de busca & Title, abstract, keywords: ``Human-Data Interaction'' \\
 \bottomrule
 \end{tabularx}
 \vspace{0.2cm}
-\footnotesize{*Nota: A soma das ocorrências dos critérios de exclusão (\hl{51}) é superior ao total de artigos excluídos (\hl{38}), pois um mesmo artigo pode ter sido desclassificado por múltiplos critérios simultaneamente.}
+\footnotesize{*Nota: A soma das ocorrências dos critérios de exclusão (\hl{50}) é superior ao total de artigos excluídos (\hl{38}), pois um mesmo artigo pode ter sido desclassificado por múltiplos critérios simultaneamente. \hl{Valores auditados a partir de \textit{ScienceDirect\_InclusaoExclusao.csv}.}}
 \end{table}
 
     Conforme evidenciado pela matriz de seleção, a análise resultou na exclusão de \hl{\textbf{38}} documentos. Os principais fatores de desclassificação compreenderam o alto índice de sobreposição (duplicatas) em relação à busca primária no Scopus (critério \textbf{CE9}, com 14 ocorrências), bem como a presença de abordagens em que a temática figurava de modo superficial (critério \textbf{CE2}) ou deslocada do contexto de interação humana (critério \textbf{CE4}). Destaca-se, ainda, a exclusão de estudos estritamente voltados à área médica ou clínica (critério \textbf{CE8}), contabilizando 12 ocorrências para cada um desses três últimos cenários. A partir desse rigoroso filtro, consolidou-se a inclusão de \hl{\textbf{14}} trabalhos provenientes da \textit{Science Direct} no \textit{corpus} da revisão.
@@ -1478,7 +1482,7 @@ A execução da estratégia de busca, conforme os parâmetros detalhados na Tabe
 \textbf{1. Busca Quinária} & Trabalhos identificados no Catálogo de Teses e Dissertações da CAPES & 7 \\
 \midrule
 \textbf{2. Exclusões} & \textbf{Total de trabalhos excluídos} & \textbf{4} \\
-& \hspace{0.5cm}• Não atenderam integralmente aos critérios de elegibilidade & 4 \\
+& \hspace{0.5cm}• Duplicatas (critério CE9) & \hl{4} \\
 \midrule
 \textbf{3. Inclusões} & \textbf{Total de trabalhos incluídos} & \textbf{3} \\
 & \hspace{0.5cm}• Atenderam aos critérios de inclusão (CI) & 3 \\
@@ -1539,10 +1543,13 @@ Por fim, o maior impacto no volume de exclusões derivou da aplicação dos filt
     \centering
     \caption{Fluxo de Seleção dos Estudos --- PRISMA 2020}
     \label{fig:fluxo_prisma}
-    \includegraphics[width=0.9\textwidth]{PPgSI-modeloQualiDisserTeseLatex/Figuras/prisma_flow_v4.jpg}
-    % \hl{PENDENTE: esta figura é uma imagem rasterizada (JPG) com os números antigos do corpus (268/166/102);
-    % ela precisa ser regenerada manualmente (ex.: no mesmo TikZ usado no Artigo.tex) para refletir
-    % 268 identificados, 170 excluídos na triagem e 98 no corpus final, antes da versão definitiva.}
+    \includegraphics[width=0.95\textwidth]{PPgSI-modeloQualiDisserTeseLatex/Figuras/prisma_flow_v5.png}
+    % \hl{Figura regenerada a partir do mesmo código TikZ do Artigo.tex, com os números auditados
+    % diretamente nas tabelas CSV de triagem (Tabelas/*_InclusaoExclusao*.csv):
+    % 268 identificados, 170 excluídos na triagem (CE4=71, CE8=51, CE2=50 as três maiores causas
+    % combinadas entre todas as bases) e 98 no corpus final (Scopus 81, Science Direct 14,
+    % Catálogo de Teses CAPES 3). Substitui a versão anterior (prisma\_flow\_v4.jpg), que
+    % refletia os números antigos do corpus (268/166/102).}
     \vspace{0.2cm}
     {\small Fonte: Elaborada pela autora.}
 \end{figure}
