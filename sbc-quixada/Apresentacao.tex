@@ -1,0 +1,435 @@
+\documentclass[aspectratio=169,12pt]{beamer}
+
+% ---------- language & fonts ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazilian]{babel}
+\usepackage{lmodern}
+\renewcommand{\familydefault}{\sfdefault} % sans-serif throughout (accessibility)
+\usepackage{fontawesome5}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,positioning,fit,arrows.meta}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{geometry}
+% Beamer's native page is only ~16x9cm; PowerPoint's 16:9 slide is physically
+% 13.333x7.5in. Matching that size makes literal pt sizes (32pt titles, 24pt
+% body, per the accessibility spec) mean the same thing they mean in a deck
+% authored in PowerPoint, instead of overflowing a much smaller native page.
+\geometry{paperwidth=13.333in,paperheight=7.5in}
+
+% ---------- palette (high contrast, colorblind-safe: navy / blue family / warm amber) ----------
+\definecolor{navy}{HTML}{1E2761}
+\definecolor{steel}{HTML}{4C6FB1}
+\definecolor{ice}{HTML}{CADCFC}
+\definecolor{amber}{HTML}{E8A33D}
+\definecolor{muted}{HTML}{3E4A6B}
+
+% ---------- beamer setup ----------
+\usetheme{default}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=navy,bg=white}
+\setbeamercolor{frametitle}{fg=navy,bg=white}
+\setbeamercolor{itemize item}{fg=amber}
+\setbeamercolor{itemize subitem}{fg=steel}
+\setbeamertemplate{itemize item}{\textbullet}
+\setbeamertemplate{itemize subitem}{\textendash}
+\setbeamerfont{itemize item}{size=\normalsize}
+
+% exact point sizes required by the accessibility guidelines: 32pt titles, 24pt body
+\setbeamerfont{frametitle}{size={\fontsize{32}{37}\selectfont},series=\bfseries}
+\setbeamerfont{normal text}{size={\fontsize{24}{29}\selectfont}}
+\setbeamerfont{itemize/enumerate body}{size={\fontsize{24}{29}\selectfont}}
+\setbeamerfont{itemize/enumerate subbody}{size={\fontsize{20}{25}\selectfont}}
+\setbeamertemplate{frametitle}{%
+  \vspace{4pt}\hspace{6pt}\usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle\par
+}
+\setbeamertemplate{navigation symbols}{}
+\setbeamersize{text margin left=8mm,text margin right=8mm}
+
+% ---------- footer (page number + running title), always on white ----------
+\newcommand{\decknote}{IHC 2026 \textperiodcentered\ Quixad\'a/CE --- Intera\c{c}\~ao Humano-Dados em Contextos Urbanos}
+\setbeamertemplate{footline}{%
+  \ifnum\insertframenumber=1\relax\else
+    \leavevmode
+    \hbox{\begin{beamercolorbox}[wd=\paperwidth,ht=3.4ex,dp=1.4ex,leftskip=6mm,rightskip=6mm]{footline}
+      {\fontsize{9}{11}\selectfont\color{muted}\decknote\hfill\insertframenumber}
+    \end{beamercolorbox}}
+  \fi
+}
+
+% ---------- helper macros ----------
+% NOTE on units: the deck's physical page is 13.333in x 7.5in (see \geometry
+% above, matching a PowerPoint 16:9 slide), so all macro dimensions below are
+% given in inches to be legible at that real physical scale.
+
+% icon in a filled circle. #1=diameter (a full dimension, e.g. 1.2in) #2=bgcolor #3=icon command
+\newcommand{\iconcircle}[3]{%
+  \begin{tikzpicture}
+    \node[circle,fill=#2,minimum size=#1,inner sep=0] (c) {};
+    \node[white] at (c) {#3};
+  \end{tikzpicture}%
+}
+
+% top-right decorative icon badge, placed via overlay so it doesn't disturb layout
+\newcommand{\cornericon}[2]{% #1=bgcolor #2=icon
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north east,xshift=-9mm,yshift=-8mm] at (current page.north east) {\iconcircle{1in}{#1}{\LARGE #2}};
+  \end{tikzpicture}%
+}
+
+% a short italic "tag" line under a title, e.g. the QP reference
+\newcommand{\qptag}[1]{{\fontsize{16}{19}\selectfont\itshape\color{muted}#1\par}\vspace{2mm}}
+
+% big-number stat callout: number on top, caption below, never overlapping
+% (uses relative/chained positioning, like \pillarcard)
+\newcommand{\statbox}[5]{% #1=width(in) #2=height(in) #3=bgcolor #4=number #5=caption
+  \begin{tikzpicture}
+    \node[rounded corners=4pt,fill=#3,minimum width=#1in,minimum height=#2in,text width=#1in,align=center] (b) {};
+    \node[anchor=north,yshift=-8mm,navy,font=\bfseries\fontsize{40}{44}\selectfont] (n) at (b.north) {#4};
+    \node[anchor=north,yshift=-3mm,navy,text width=#1in,align=center,font=\fontsize{16}{19}\selectfont,inner xsep=4mm] at (n.south) {#5};
+  \end{tikzpicture}%
+}
+
+% pillar-style card: title + short text, on a navy/steel block, with icon
+% uses relative (chained) positioning so it never overflows its own box
+\newcommand{\pillarcard}[4]{% #1=bgcolor #2=icon #3=title #4=body
+  \begin{tikzpicture}
+    \node[rounded corners=4pt,fill=#1,minimum width=3.7in,minimum height=3.3in,text width=3.4in,align=center] (b) {};
+    \node[anchor=north,yshift=-8mm] (ic) at (b.north) {\iconcircle{1.05in}{amber}{\Large #2}};
+    \node[anchor=north,yshift=-4mm,text width=3.35in,align=center,white,font=\bfseries\fontsize{22}{25}\selectfont] (ti) at (ic.south) {#3};
+    \node[anchor=north,yshift=-3mm,text width=3.1in,align=center,white,font=\fontsize{16}{19}\selectfont] at (ti.south) {#4};
+  \end{tikzpicture}%
+}
+
+% auto-height highlight panel (safer than fixed-size tikz nodes for variable-length text)
+% #1=width(w/ unit, e.g. 10.5in) #2=bgcolor #3=textcolor #4=title #5=body
+\newcommand{\panel}[5]{%
+  \colorbox{#2}{\begin{minipage}[t]{#1}
+    \vspace{3mm}
+    {\color{#3}\bfseries\fontsize{19}{23}\selectfont #4\par}
+    \vspace{1.5mm}
+    {\color{#3}\fontsize{15}{19}\selectfont #5\par}
+    \vspace{3mm}
+  \end{minipage}}%
+}
+
+\title{}
+\author{}
+\date{}
+
+\begin{document}
+
+% ============================================================ SLIDE 1 -- Titulo
+{\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \color{white}
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north east,xshift=-14mm,yshift=-12mm] at (current page.north east) {\iconcircle{1.5in}{amber}{\huge\faIcon{city}}};
+  \end{tikzpicture}
+  \vspace{18mm}
+
+  {\fontsize{30}{34}\selectfont\bfseries\color{white}
+   Intera\c{c}\~ao Humano-Dados\\ em Contextos Urbanos\par}
+  \vspace{4mm}
+  {\fontsize{20}{24}\selectfont\itshape\color{ice} Uma Revis\~ao Sistem\'atica da Literatura\par}
+  \vspace{10mm}
+  {\fontsize{18}{22}\selectfont\bfseries\color{white} La\'isa Dias Brito Alves \quad\textperiodcentered\quad Jo\~ao Luiz Bernardes Jr.\par}
+  \vspace{2mm}
+  {\fontsize{14}{18}\selectfont\color{ice} EACH-USP --- Escola de Artes, Ci\^encias e Humanidades \textperiodcentered\ Universidade de S\~ao Paulo\par}
+  \vspace{14mm}
+  {\fontsize{12}{15}\selectfont\color{ice} XXV Simp\'osio Brasileiro sobre Fatores Humanos em Sistemas Computacionais (IHC 2026) \textperiodcentered\ Quixad\'a/CE\par}
+\end{frame}}
+
+% ============================================================ SLIDE 2 -- Motivacao
+\begin{frame}
+  \frametitle{Cidades cada vez mais datificadas}
+  \cornericon{amber}{\faIcon{city}}
+  \vspace{3mm}
+  \begin{columns}[T]
+    \begin{column}{0.30\textwidth}
+      \statbox{2.9}{2.3}{ice}{60\%}{da popula\c{c}\~ao mundial viver\'a em cidades at\'e 2050 (ONU)}
+    \end{column}
+    \begin{column}{0.66\textwidth}
+      \begin{itemize}
+        \item IoT e Urbanismo de Plataforma coletam dados em escala, com \textit{smartphones} como sensores passivos.
+        \item Consentimento presumido (sem transpar\^encia real nem controle efetivo pelo cidad\~ao).
+        \item Resultado: desafios cr\'iticos de privacidade e seguran\c{c}a na infraestrutura urbana.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ============================================================ SLIDE 3 -- O que e IHD
+\begin{frame}
+  \frametitle{Intera\c{c}\~ao Humano-Dados (IHD)}
+  {\fontsize{20}{25}\selectfont Proposta por \textbf{Mortier et al. (2015)} --- campo aut\^onomo, focado na rela\c{c}\~ao \'etica entre o indiv\'iduo e seus rastros de dados.\par}
+  \vspace{6mm}
+  \begin{columns}[T]
+    \column{0.333\textwidth}\centering
+      \pillarcard{navy}{\faIcon{eye}}{Legibilidade}{Compreender e construir sentido sobre os dados coletados (\textit{sensemaking}).}
+    \column{0.333\textwidth}\centering
+      \pillarcard{navy}{\faIcon{handshake}}{Ag\^encia}{Poder real de decis\~ao sobre os pr\'oprios rastros digitais.}
+    \column{0.333\textwidth}\centering
+      \pillarcard{navy}{\faIcon{exchange-alt}}{Negociabilidade}{Revisar e revogar permiss\~oes conforme o contexto muda.}
+  \end{columns}
+\end{frame}
+
+% ============================================================ SLIDE 4 -- Objetivo e Protocolo (metodo comprimido)
+\begin{frame}
+  \frametitle{Objetivo e protocolo da RSL}
+  \vspace{4mm}
+  \begin{center}
+  \begin{tikzpicture}
+    \node[rounded corners=6pt,fill=ice,minimum width=10.6in,minimum height=1.3in,text width=9.8in,align=center,text=navy,font=\bfseries\fontsize{24}{29}\selectfont] {Mapear a evolu\c{c}\~ao da IHD em contextos urbanos (2014--2024)};
+  \end{tikzpicture}
+  \end{center}
+  \vspace{10mm}
+
+  \begin{center}
+  \begin{tikzpicture}
+    \node[rounded corners=5pt,fill=navy,minimum width=2.8in,minimum height=2.0in] (b1) at (0,0) {};
+    \node[white,font=\bfseries\fontsize{40}{44}\selectfont] at (b1.center) [yshift=6mm] {268};
+    \node[white,text width=2.5in,align=center,font=\fontsize{16}{19}\selectfont] at (b1.center) [yshift=-9mm] {registros iniciais};
+
+    \node[rounded corners=5pt,fill=steel,minimum width=2.8in,minimum height=2.0in] (b2) at (3.6in,0) {};
+    \node[white,font=\bfseries\fontsize{40}{44}\selectfont] at (b2.center) [yshift=6mm] {170};
+    \node[white,text width=2.5in,align=center,font=\fontsize{16}{19}\selectfont] at (b2.center) [yshift=-9mm] {exclu\'idos (CI e CE)};
+
+    \node[rounded corners=5pt,fill=navy,minimum width=2.8in,minimum height=2.0in] (b3) at (7.2in,0) {};
+    \node[white,font=\bfseries\fontsize{40}{44}\selectfont] at (b3.center) [yshift=6mm] {98};
+    \node[white,text width=2.5in,align=center,font=\fontsize{16}{19}\selectfont] at (b3.center) [yshift=-9mm] {inclu\'idos no corpus};
+
+    \draw[-{Latex[length=4mm]},line width=1.6pt,muted] (1.65in,0) -- (2.15in,0);
+    \draw[-{Latex[length=4mm]},line width=1.6pt,muted] (5.25in,0) -- (5.75in,0);
+  \end{tikzpicture}
+  \end{center}
+  \vspace{9mm}
+  {\fontsize{16}{20}\selectfont\itshape\color{muted}\centering
+   Protocolo: Kitchenham e Brereton (2013) \textperiodcentered\ RSL + PRISMA 2020 \textperiodcentered\ sem filtro de idioma \textperiodcentered\ sem restri\c{c}\~ao pr\'evia ao dom\'inio urbano (achado, n\~ao crit\'erio de entrada)\par}
+\end{frame}
+
+% ============================================================ SLIDE 5 -- Corpus + grafico
+\begin{frame}
+  \frametitle{O corpus: 98 estudos (2014--2024)}
+  \vspace{2mm}
+  \begin{center}
+  \begin{tikzpicture}
+    \begin{axis}[
+      ybar stacked, bar width=22pt,
+      width=10.8in, height=4.7in,
+      ymin=0, ymax=25,
+      symbolic x coords={2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024},
+      xtick=data, x tick label style={font=\fontsize{14}{16}\selectfont,navy},
+      ytick={0,5,10,15,20,25}, y tick label style={font=\fontsize{14}{16}\selectfont,navy},
+      ylabel={\fontsize{15}{18}\selectfont N\'umero de artigos}, ylabel style={navy},
+      axis lines*=left, axis line style={navy,line width=0.8pt},
+      enlarge x limits=0.06,
+      legend style={at={(0.5,-0.20)},anchor=north,legend columns=3,font=\fontsize{15}{18}\selectfont,draw=none},
+      ymajorgrids, grid style={gray!25},
+    ]
+      \addplot[fill=navy] coordinates {(2014,1)(2015,1)(2016,4)(2017,4)(2018,2)(2019,2)(2020,15)(2021,14)(2022,8)(2023,14)(2024,16)};
+      \addplot[fill=steel] coordinates {(2014,0)(2015,0)(2016,0)(2017,0)(2018,1)(2019,3)(2020,2)(2021,2)(2022,2)(2023,1)(2024,3)};
+      \addplot[fill=amber] coordinates {(2014,0)(2015,0)(2016,0)(2017,0)(2018,0)(2019,1)(2020,0)(2021,0)(2022,0)(2023,1)(2024,1)};
+      \legend{Scopus (81), Science Direct (14), Teses CAPES (3)}
+    \end{axis}
+  \end{tikzpicture}
+  \end{center}
+  \vspace{2mm}
+  {\fontsize{16}{20}\selectfont\itshape\color{muted}\centering
+  Pico em 2020--2021 (33 estudos) e novo pico em 2024 (20 estudos) \textperiodcentered\ Scopus predomina em todos os anos ($\approx$82,7\%)\par}
+\end{frame}
+
+% ============================================================ SLIDE 6 -- QP1/QP4 Antes
+\begin{frame}
+  \frametitle{Antes da IHD: paradigma tecnocr\'atico}
+  \cornericon{steel}{\faIcon{file-contract}}
+  \qptag{QP1, QP4 --- Evolu\c{c}\~ao e Paradigmas}
+  \panel{10.6in}{ice}{navy}{``Aviso e Escolha'' (\textit{Notice and Choice})}{Consentimento bin\'ario sobre termos extensos; EULAs unilaterais e inegoci\'aveis (\textit{take-it-or-leave-it}); a responsabilidade legal \'e transferida ao usu\'ario.}
+  \vspace{5mm}
+  \begin{itemize}
+    \item Regula\c{c}\~ao inicial (Diretiva 95/46/CE $\rightarrow$ GDPR) tratava o dado --- replic\'avel e relacional --- como um objeto f\'isico isolado.
+    \item Resultado: ecossistemas fechados (\textit{walled gardens}), que monopolizam a cust\'odia dos dados e restringem a interoperabilidade.
+    \item A IHC cl\'assica limitava-se \`a usabilidade de tela, sem tratar os riscos \'eticos do processamento invis\'ivel e onipresente.
+  \end{itemize}
+\end{frame}
+
+% ============================================================ SLIDE 7 -- QP1/QP4 Depois
+\begin{frame}
+  \frametitle{Depois: o dado como objeto de 1\textsuperscript{a} classe}
+  \cornericon{amber}{\faIcon{layer-group}}
+  \qptag{QP1, QP4 --- Evolu\c{c}\~ao e Paradigmas}
+  \panel{10.6in}{navy}{white}{A virada de 2015 (Mortier et al.)}{A IHD emerge como campo \'etico aut\^onomo: dados deixam de ser entradas passivas e tornam-se entidades comput\'aveis --- manipul\'aveis, transfer\'iveis e audit\'aveis --- material de \textit{design}, n\~ao subproduto do sistema.}
+  \vspace{5mm}
+  \begin{itemize}
+    \item \textbf{Legibilidade}: da exibi\c{c}\~ao est\'atica ao \textit{data sensemaking} --- mas jarg\~oes t\'ecnicos ainda persistem nas implementa\c{c}\~oes reais.
+    \item \textbf{Ag\^encia}: do consentimento bin\'ario \`a \textit{accountability} --- o cidad\~ao vira \textit{steward} de seus rastros, por\'em sem heur\'isticas validadas de apoio.
+    \item \textbf{Negociabilidade}: da tela ao IoT urbano onipresente --- o controle segue fragmentado entre m\'ultiplas ferramentas.
+  \end{itemize}
+\end{frame}
+
+% ============================================================ SLIDE 8 -- QP2/QP3 Lacunas estruturais
+\begin{frame}
+  \frametitle{Lacunas estruturais e sobrecarga cognitiva}
+  \cornericon{steel}{\faIcon{brain}}
+  \qptag{QP2, QP3 --- Lacunas e Descompasso Pr\'atico}
+  \begin{itemize}
+    \item Falta de heur\'isticas de \textit{design} validadas, sobretudo em geoprocessamento --- lacuna que motivou o pr\'oprio \textit{framework} ATLAS.
+    \item Ambiguidade na defini\c{c}\~ao dos perfis de usu\'ario e aus\^encia de crit\'erios claros do que torna um dado aberto reutiliz\'avel.
+    \item Sobrecarga cognitiva negligenciada: fadiga e ansiedade informacional pela perda de controle sobre os pr\'oprios registros.
+    \item Identidade Autossoberana (SSI): paradigma promissor de gest\~ao descentralizada de credenciais, mas ainda complexo demais para o p\'ublico leigo.
+  \end{itemize}
+\end{frame}
+
+% ============================================================ SLIDE 9 -- QP2/QP3 IA e opacidade
+\begin{frame}
+  \frametitle{IA, opacidade algor\'itmica e o ``problema perverso''}
+  \cornericon{steel}{\faIcon{robot}}
+  \qptag{QP2, QP3 --- Lacunas e Descompasso Pr\'atico}
+  \begin{itemize}
+    \item Algoritmos de aprendizado de m\'aquina sofrem \textit{covariate shift}, dificultando o \textit{sensemaking} humano sobre fluxos de dados em tempo real.
+    \item Sigilo industrial e caixas-pretas corporativas comprometem o Direito \`a Explica\c{c}\~ao de decis\~oes automatizadas que afetam o cidad\~ao.
+    \item Servi\c{c}os de Gest\~ao de Dados Pessoais (PDMS) ainda falham em conciliar o extrativismo comercial com a real ag\^encia do usu\'ario.
+  \end{itemize}
+  \vspace{4mm}
+  \panel{10.6in}{amber}{navy}{Um ``problema perverso''}{O equil\'ibrio entre otimizar servi\c{c}os em Cidades Inteligentes e proteger a privacidade \'e interdependente, sist\^emico e sem solu\c{c}\~ao puramente t\'ecnica.}
+\end{frame}
+
+% ============================================================ SLIDE 10 -- QP5/QPS4 Cidade civica
+\begin{frame}
+  \frametitle{Cidades Inteligentes e capacidade c\'ivica}
+  \cornericon{amber}{\faIcon{broadcast-tower}}
+  \qptag{QP5, QPS4 --- Cidades Inteligentes e Fatores Culturais}
+  \begin{itemize}
+    \item Tecnologia calma (\textit{calm technology}): monitorar o ambiente sem intrusão, com a privacidade como premissa central da arquitetura.
+    \item Legibilidade c\'ivica: entender a coleta feita por sensores de rua liga atos cotidianos (como o transporte p\'ublico) \`as macroestruturas de extra\c{c}\~ao de dados.
+    \item Ag\^encia via Limita\c{c}\~ao da Finalidade: direito de desativar a captura ambiental e de aprovar usos secund\'arios da informa\c{c}\~ao.
+    \item \textit{Frameworks} locais --- HDIdea e ATLAS --- adaptam heur\'isticas e metáforas visuais ao contexto urbano espec\'ifico.
+  \end{itemize}
+\end{frame}
+
+% ============================================================ SLIDE 11 -- QP5/QPS4 Fatores culturais e Brasil
+\begin{frame}
+  \frametitle{Fatores culturais e o contexto brasileiro}
+  \cornericon{amber}{\faIcon{globe-americas}}
+  \qptag{QP5, QPS4 --- Cidades Inteligentes e Fatores Culturais}
+  \begin{itemize}
+    \item Coletivismo $\times$ individualismo: culturas coletivistas aceitam mais o compartilhamento voltado ao benef\'icio comum; individualistas priorizam a restri\c{c}\~ao pessoal.
+    \item Vi\'es de legado (\textit{legacy bias}): a importa\c{c}\~ao acr\'itica de modelos do Norte Global pode acentuar assimetrias no Brasil, marcado por disparidades de letramento digital.
+    \item Minorias \'etnicas negociam menos seus dados com o Estado --- risco acrescido de discrimina\c{c}\~ao algor\'itmica e exclus\~ao das din\^amicas das Cidades Inteligentes.
+    \item GranDIHC-BR (2025--2035): Grandes Desafios de Pesquisa nacionalizam a agenda da IHD no contexto brasileiro.
+  \end{itemize}
+\end{frame}
+
+% ============================================================ SLIDE 12 -- QPS1-3 Multissensorial
+\begin{frame}
+  \frametitle{Do Mantra de Shneiderman ao multissensorial}
+  \cornericon{steel}{\faIcon{hand-paper}}
+  \qptag{QPS1--QPS3 --- Avalia\c{c}\~ao e Inclus\~ao Multissensorial}
+  \begin{itemize}
+    \item ``Mantra de Shneiderman'' (vis\~ao geral $\rightarrow$ \textit{zoom} $\rightarrow$ filtro) organiza pain\'eis, mas \'e insuficiente sozinho para o p\'ublico leigo.
+    \item \textit{Scaffolding}: suporte progressivo ao aprendizado substitui sintaxes complexas por question\'amentos guiados.
+    \item Interfaces de Voz (VUI) e sonifica\c{c}\~ao reduzem a barreira de aprendizado, explorando vias auditivas e vieses motores j\'a conhecidos.
+    \item Fisicaliza\c{c}\~ao t\'atil e \textit{Databoxes} (nós de processamento local) tornam a governan\c{c}a de dados tang\'ivel.
+  \end{itemize}
+\end{frame}
+
+% ============================================================ SLIDE 13 -- QPS1-3 Metodos de avaliacao
+\begin{frame}
+  \frametitle{M\'etodos de avalia\c{c}\~ao em IHD}
+  \cornericon{steel}{\faIcon{clipboard-check}}
+  \qptag{QPS1--QPS3 --- Avalia\c{c}\~ao e Inclus\~ao Multissensorial}
+  \begin{itemize}
+    \item \textit{Eye-tracking}: mede a sobrecarga cognitiva subconsciente em pain\'eis complexos (ex.: ATLAS).
+    \item \textit{Think-Aloud}, entrevistas com peritos e o M\'etodo de Avalia\c{c}\~ao de Comunicabilidade (MAC) avaliam a compreens\~ao c\'ivica de forma pragm\'atica.
+    \item Testes A/B, mapeamentos sistem\'aticos e pain\'eis \textit{Delphi} sustentam o consenso metodol\'ogico cont\'inuo da \'area.
+    \item A comunidade brasileira de IHC nacionaliza esses protocolos como ferramenta contra as disparidades da dataficação.
+  \end{itemize}
+\end{frame}
+
+% ============================================================ SLIDE 14 -- Matriz Comparativa
+\begin{frame}
+  \frametitle{Matriz comparativa de \textit{frameworks}}
+  \vspace{2mm}
+  \begin{center}
+  {\fontsize{14}{17}\selectfont
+  \renewcommand{\arraystretch}{1.35}
+  \begin{tabular}{p{2.55in} p{2.15in} p{2.85in}}
+    \toprule
+    \textbf{\textit{Framework}} & \textbf{Princ\'ipio coberto} & \textbf{M\'etodo de avalia\c{c}\~ao} \\ \midrule
+    Modelo Fundacional (Mortier et al.) & Legibilidade, Ag\^encia, Negociabilidade & Testes cl\'inicos, question\'arios, estudos de caso \\
+    HDIdea & Legibilidade & \textit{Think-Aloud}, heur\'isticas colaborativas \\
+    ATLAS (Geoprocessamento) & Legibilidade e Ag\^encia & \textit{Eye-tracking}, MAC \\
+    \textit{Databoxes} / Mercados de Dados & Ag\^encia e Negociabilidade & Testes A/B, prototipa\c{c}\~ao tang\'ivel \\
+    IHD Multissensorial (VUI e t\'atil) & Legibilidade (Acessibilidade) & Vieses motores, pain\'eis \textit{Delphi} \\
+    \bottomrule
+  \end{tabular}}
+  \end{center}
+  \vspace{4mm}
+  {\fontsize{15}{19}\selectfont\itshape\color{muted}\centering
+   Vers\~ao completa na Tabela 5 do artigo --- inclui tamb\'em \textit{Scaffolding} e Modelos H\'ibridos (CPS/XAI)\par}
+\end{frame}
+
+% ============================================================ SLIDE 15 -- Taxonomia por pilar
+\begin{frame}
+  \frametitle{Taxonomia de \textit{frameworks} por pilar}
+  \vspace{2mm}
+  \begin{columns}[T]
+    \column{0.333\textwidth}\centering
+      \pillarcard{navy}{\faIcon{eye}}{Legibilidade}{HDIdea, ATLAS, IHD Multissensorial, Diretrizes Cognitivas (\textit{Scaffolding}).}
+    \column{0.333\textwidth}\centering
+      \pillarcard{navy}{\faIcon{handshake}}{Ag\^encia}{ATLAS, \textit{Databoxes} e Mercados de Dados, Modelos H\'ibridos (CPS/XAI).}
+    \column{0.333\textwidth}\centering
+      \pillarcard{navy}{\faIcon{exchange-alt}}{Negociabilidade}{\textit{Databoxes} e Mercados de Dados, Modelos H\'ibridos (CPS/XAI).}
+  \end{columns}
+  \vspace{4mm}
+  {\fontsize{15}{19}\selectfont\itshape\color{muted}\centering
+   Contribui\c{c}\~ao original desta revis\~ao: ATLAS e os Modelos H\'ibridos cobrem mais de um pilar por sobreporem princ\'ipios\par}
+\end{frame}
+
+% ============================================================ SLIDE 16 -- Contribuicoes
+\begin{frame}
+  \frametitle{Contribui\c{c}\~oes desta revis\~ao}
+  \cornericon{amber}{\faIcon{lightbulb}}
+  \begin{itemize}
+    \item Panorama atualizado (2014--2024) da IHD aplicada a contextos urbanos, com 98 estudos analisados sob o protocolo PRISMA 2020.
+    \item Taxonomia in\'edita de \textit{frameworks} organizada pelos tr\^es pilares da IHD (Legibilidade, Ag\^encia, Negociabilidade).
+    \item Matriz comparativa cruzando \textit{frameworks}, valida\c{c}\~ao emp\'irica e m\'etodos de avalia\c{c}\~ao.
+    \item Mapeamento das Quest\~oes de Pesquisa aos eixos tem\'aticos e \`as lacunas sociot\'ecnicas identificadas.
+  \end{itemize}
+\end{frame}
+
+% ============================================================ SLIDE 17 -- Limitacoes
+\begin{frame}
+  \frametitle{Limita\c{c}\~oes e trabalhos futuros}
+  \cornericon{steel}{\faIcon{exclamation-triangle}}
+  \begin{itemize}
+    \item Triagem e extra\c{c}\~ao conduzidas pelos dois autores, sem protocolo formal de dupla checagem cega e independente.
+    \item A \textit{string} de busca centrada em ``Human-Data Interaction'' pode ter omitido sin\^onimos (ex.: ``soberania digital'').
+    \item Recorte temporal (2014--2024) e predom\'inio da Scopus ($\approx$82,7\%) limitam a generaliza\c{c}\~ao dos achados.
+    \item \textbf{Trabalhos futuros}: valida\c{c}\~ao emp\'irica da taxonomia proposta; amplia\c{c}\~ao da \textit{string} de busca; estudos com grupos vulner\'aveis no contexto brasileiro.
+  \end{itemize}
+\end{frame}
+
+% ============================================================ SLIDE 18 -- Obrigada
+{\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \color{white}
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north east,xshift=-14mm,yshift=-12mm] at (current page.north east) {\iconcircle{1.5in}{amber}{\huge\faIcon{heart}}};
+  \end{tikzpicture}
+  \vspace{28mm}
+  {\fontsize{34}{38}\selectfont\bfseries\color{white} Obrigada!\par}
+  \vspace{6mm}
+  {\fontsize{20}{25}\selectfont\color{ice} Perguntas e coment\'arios s\~ao bem-vindos.\par}
+  \vspace{14mm}
+  {\fontsize{16}{20}\selectfont\bfseries\color{white} La\'isa Dias Brito Alves \quad\textperiodcentered\quad Jo\~ao Luiz Bernardes Jr.\par}
+  \vspace{2mm}
+  {\fontsize{13}{17}\selectfont\color{ice} EACH-USP --- Escola de Artes, Ci\^encias e Humanidades \textperiodcentered\ Universidade de S\~ao Paulo\par}
+\end{frame}}
+
+\end{document}
