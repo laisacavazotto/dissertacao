@@ -182,69 +182,127 @@
   \end{columns}
 \end{frame}
 
-% ============================================================ SLIDE 4 -- Objetivo e Protocolo (metodo comprimido)
+% ============================================================ SLIDE 4 -- Objetivo e Perguntas de Pesquisa
 \begin{frame}
-  \frametitle{Objetivo e protocolo da RSL}
-  \vspace{4mm}
-  \begin{center}
-  \begin{tikzpicture}
-    \node[rounded corners=6pt,fill=ice,minimum width=10.6in,minimum height=1.3in,text width=9.8in,align=center,text=navy,font=\bfseries\fontsize{24}{29}\selectfont] {Mapear a evolu\c{c}\~ao da IHD em contextos urbanos (2014--2024)};
-  \end{tikzpicture}
-  \end{center}
-  \vspace{10mm}
-
-  \begin{center}
-  \begin{tikzpicture}
-    \node[rounded corners=5pt,fill=navy,minimum width=2.8in,minimum height=2.0in] (b1) at (0,0) {};
-    \node[white,font=\bfseries\fontsize{40}{44}\selectfont] at (b1.center) [yshift=6mm] {268};
-    \node[white,text width=2.5in,align=center,font=\fontsize{16}{19}\selectfont] at (b1.center) [yshift=-9mm] {registros iniciais};
-
-    \node[rounded corners=5pt,fill=steel,minimum width=2.8in,minimum height=2.0in] (b2) at (3.6in,0) {};
-    \node[white,font=\bfseries\fontsize{40}{44}\selectfont] at (b2.center) [yshift=6mm] {170};
-    \node[white,text width=2.5in,align=center,font=\fontsize{16}{19}\selectfont] at (b2.center) [yshift=-9mm] {exclu\'idos (CI e CE)};
-
-    \node[rounded corners=5pt,fill=navy,minimum width=2.8in,minimum height=2.0in] (b3) at (7.2in,0) {};
-    \node[white,font=\bfseries\fontsize{40}{44}\selectfont] at (b3.center) [yshift=6mm] {98};
-    \node[white,text width=2.5in,align=center,font=\fontsize{16}{19}\selectfont] at (b3.center) [yshift=-9mm] {inclu\'idos no corpus};
-
-    \draw[-{Latex[length=4mm]},line width=1.6pt,muted] (1.65in,0) -- (2.15in,0);
-    \draw[-{Latex[length=4mm]},line width=1.6pt,muted] (5.25in,0) -- (5.75in,0);
-  \end{tikzpicture}
-  \end{center}
-  \vspace{9mm}
-  {\fontsize{16}{20}\selectfont\itshape\color{muted}\centering
-   Protocolo: Kitchenham e Brereton (2013) \textperiodcentered\ RSL + PRISMA 2020 \textperiodcentered\ sem filtro de idioma \textperiodcentered\ sem restri\c{c}\~ao pr\'evia ao dom\'inio urbano (achado, n\~ao crit\'erio de entrada)\par}
-\end{frame}
-
-% ============================================================ SLIDE 5 -- Corpus + grafico
-\begin{frame}
-  \frametitle{O corpus: 98 estudos (2014--2024)}
+  \frametitle{Objetivo e perguntas de pesquisa}
+  \cornericon{amber}{\faIcon{compass}}
   \vspace{2mm}
   \begin{center}
   \begin{tikzpicture}
+    \node[rounded corners=6pt,fill=ice,minimum width=10.6in,minimum height=1.05in,text width=9.8in,align=center,text=navy,font=\bfseries\fontsize{21}{25}\selectfont] {Mapear a evolu\c{c}\~ao da IHD em contextos urbanos (2014--2024)};
+  \end{tikzpicture}
+  \end{center}
+  \vspace{4mm}
+  {\fontsize{16}{20}\selectfont\itshape\color{muted}\centering Para isso, a revis\~ao busca responder a 9 perguntas de pesquisa:\par}
+  \vspace{3mm}
+  {\setbeamerfont{itemize/enumerate body}{size=\fontsize{14}{17}\selectfont}
+  \begin{columns}[T]
+    \column{0.5\textwidth}
+      {\fontsize{16}{19}\selectfont\bfseries\color{navy} Principais (QP)\par}
+      \vspace{1mm}
+      \begin{itemize}
+        \item \textbf{QP1} --- Como a IHD evoluiu em conceito e pr\'atica (2014--2024)?
+        \item \textbf{QP2} --- Quais as diferen\c{c}as entre teoria e pr\'atica na literatura?
+        \item \textbf{QP3} --- Quais lacunas de pesquisa s\~ao recorrentemente citadas?
+        \item \textbf{QP4} --- Antes da IHD (pr\'e-2015), como se entendia a gest\~ao de dados?
+        \item \textbf{QP5} --- Qual a import\^ancia da IHD em Cidades Inteligentes?
+      \end{itemize}
+    \column{0.5\textwidth}
+      {\fontsize{16}{19}\selectfont\bfseries\color{navy} Secund\'arias (QPS)\par}
+      \vspace{1mm}
+      \begin{itemize}
+        \item \textbf{QPS1} --- Quais m\'etodos avaliam a efic\'acia da IHD (ex.: \textit{eye-tracking})?
+        \item \textbf{QPS2} --- O que ajuda usu\'arios leigos a compreender os dados?
+        \item \textbf{QPS3} --- Os estudos testaram \textit{frameworks} de IHD em casos reais?
+        \item \textbf{QPS4} --- Como fatores \'etnico-culturais influenciam a aplica\c{c}\~ao da IHD?
+      \end{itemize}
+  \end{columns}}
+  \vspace{3mm}
+  {\fontsize{14}{18}\selectfont\itshape\color{muted}\centering
+   Protocolo: Kitchenham e Brereton (2013) \textperiodcentered\ RSL + PRISMA 2020 \textperiodcentered\ sem filtro de idioma\par}
+\end{frame}
+
+% ============================================================ SLIDE 4B -- Criterios de Selecao e Funil
+\begin{frame}
+  \frametitle{Crit\'erios de sele\c{c}\~ao e funil de triagem}
+  \vspace{2mm}
+  \begin{center}
+  \begin{tikzpicture}
+    \node[rounded corners=5pt,fill=navy,minimum width=2.7in,minimum height=1.75in] (b1) at (0,0) {};
+    \node[white,font=\bfseries\fontsize{36}{40}\selectfont] at (b1.center) [yshift=5mm] {268};
+    \node[white,text width=2.4in,align=center,font=\fontsize{15}{18}\selectfont] at (b1.center) [yshift=-8mm] {registros iniciais};
+
+    \node[rounded corners=5pt,fill=steel,minimum width=2.7in,minimum height=1.75in] (b2) at (3.5in,0) {};
+    \node[white,font=\bfseries\fontsize{36}{40}\selectfont] at (b2.center) [yshift=5mm] {170};
+    \node[white,text width=2.4in,align=center,font=\fontsize{15}{18}\selectfont] at (b2.center) [yshift=-8mm] {n\~ao atendiam aos crit\'erios};
+
+    \node[rounded corners=5pt,fill=navy,minimum width=2.7in,minimum height=1.75in] (b3) at (7.0in,0) {};
+    \node[white,font=\bfseries\fontsize{36}{40}\selectfont] at (b3.center) [yshift=5mm] {98};
+    \node[white,text width=2.4in,align=center,font=\fontsize{15}{18}\selectfont] at (b3.center) [yshift=-8mm] {inclu\'idos no corpus};
+
+    \draw[-{Latex[length=4mm]},line width=1.6pt,muted] (1.6in,0) -- (2.08in,0);
+    \draw[-{Latex[length=4mm]},line width=1.6pt,muted] (5.1in,0) -- (5.58in,0);
+  \end{tikzpicture}
+  \end{center}
+  \vspace{7mm}
+  \begin{columns}[T]
+    \column{0.5\textwidth}
+      {\fontsize{17}{21}\selectfont\bfseries\color{navy}\faIcon{check}\ Crit\'erios de Inclus\~ao (CI)\par}
+      \vspace{1mm}
+      {\setbeamerfont{itemize/enumerate body}{size=\fontsize{14}{18}\selectfont}
+      \begin{itemize}
+        \item \textbf{CI2} \textit{Framework} pr\'atico de IHD
+        \item \textbf{CI4} Resultados emp\'iricos de efic\'acia
+        \item \textbf{CI7} Revisado por pares
+        \item \textbf{CI8} Publicado entre 2014--2024
+      \end{itemize}}
+    \column{0.5\textwidth}
+      {\fontsize{17}{21}\selectfont\bfseries\color{navy}\faIcon{times}\ Crit\'erios de Exclus\~ao (CE)\par}
+      \vspace{1mm}
+      {\setbeamerfont{itemize/enumerate body}{size=\fontsize{14}{18}\selectfont}
+      \begin{itemize}
+        \item \textbf{CE2} Men\c{c}\~ao apenas superficial \`a IHD
+        \item \textbf{CE4} Termo fora do escopo (ex.: \textit{hardware})
+        \item \textbf{CE8} Escopo estritamente m\'edico/cl\'inico
+        \item \textbf{CE9} Registros duplicados
+      \end{itemize}}
+  \end{columns}
+\end{frame}
+
+% ============================================================ SLIDE 5 -- Corpus + grafico (redesenhado)
+\begin{frame}
+  \frametitle{O corpus: 98 estudos (2014--2024)}
+  \vspace{1mm}
+  \begin{center}
+  \begin{tikzpicture}
     \begin{axis}[
-      ybar stacked, bar width=22pt,
-      width=10.8in, height=4.7in,
-      ymin=0, ymax=25,
+      ybar, bar width=22pt,
+      width=10.8in, height=4.1in,
+      ymin=0, ymax=23,
       symbolic x coords={2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024},
-      xtick=data, x tick label style={font=\fontsize{14}{16}\selectfont,navy},
-      ytick={0,5,10,15,20,25}, y tick label style={font=\fontsize{14}{16}\selectfont,navy},
+      xtick={2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024}, x tick label style={font=\fontsize{14}{16}\selectfont,navy},
+      ytick={0,5,10,15,20}, y tick label style={font=\fontsize{14}{16}\selectfont,navy},
       ylabel={\fontsize{15}{18}\selectfont N\'umero de artigos}, ylabel style={navy},
       axis lines*=left, axis line style={navy,line width=0.8pt},
       enlarge x limits=0.06,
-      legend style={at={(0.5,-0.20)},anchor=north,legend columns=3,font=\fontsize{15}{18}\selectfont,draw=none},
       ymajorgrids, grid style={gray!25},
+      nodes near coords, every node near coord/.append style={anchor=south,font=\bfseries\fontsize{13}{15}\selectfont,navy,yshift=1pt},
     ]
-      \addplot[fill=navy] coordinates {(2014,1)(2015,1)(2016,4)(2017,4)(2018,2)(2019,2)(2020,15)(2021,14)(2022,8)(2023,14)(2024,16)};
-      \addplot[fill=steel] coordinates {(2014,0)(2015,0)(2016,0)(2017,0)(2018,1)(2019,3)(2020,2)(2021,2)(2022,2)(2023,1)(2024,3)};
-      \addplot[fill=amber] coordinates {(2014,0)(2015,0)(2016,0)(2017,0)(2018,0)(2019,1)(2020,0)(2021,0)(2022,0)(2023,1)(2024,1)};
-      \legend{Scopus (81), Science Direct (14), Teses CAPES (3)}
+      \addplot[fill=navy] coordinates {(2014,1)(2015,1)(2016,4)(2017,4)(2018,3)(2019,6)(2022,10)(2023,16)};
+      \addplot[fill=amber] coordinates {(2020,17)(2021,16)(2024,20)};
     \end{axis}
   \end{tikzpicture}
   \end{center}
   \vspace{2mm}
-  {\fontsize{16}{20}\selectfont\itshape\color{muted}\centering
-  Pico em 2020--2021 (33 estudos) e novo pico em 2024 (20 estudos) \textperiodcentered\ Scopus predomina em todos os anos ($\approx$82,7\%)\par}
+  \begin{center}
+  {\setlength{\fboxsep}{6pt}\fontsize{15}{19}\selectfont
+   \colorbox{navy}{\textcolor{white}{\textbf{Scopus: 81 (82,7\%)}}}\hspace{4mm}%
+   \colorbox{steel}{\textcolor{white}{\textbf{Science Direct: 14 (14,3\%)}}}\hspace{4mm}%
+   \colorbox{amber}{\textcolor{navy}{\textbf{Teses CAPES: 3 (3,1\%)}}}\par}
+  \end{center}
+  \vspace{3mm}
+  {\fontsize{15}{19}\selectfont\itshape\color{muted}\centering
+  Incipiente em 2014--2019 (19) \textperiodcentered\ \textbf{pico em 2020--2021} (33, em destaque) \textperiodcentered\ \textbf{novo pico em 2024} (20, em destaque)\par}
 \end{frame}
 
 % ============================================================ SLIDE 5B -- Divisor Parte 1
