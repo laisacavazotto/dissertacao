@@ -136,7 +136,7 @@
 % #1 = footnote text (already numbered, entries separated by \\[4pt]).
 \newcommand{\slidefootnotes}[1]{%
   \begin{tikzpicture}[remember picture,overlay]
-    \node[anchor=south west,xshift=8mm,yshift=4.8mm,text width=11.8in,align=left,inner sep=0pt] at (current page.south west) {%
+    \node[anchor=south west,xshift=8mm,yshift=8.5mm,text width=11.8in,align=left,inner sep=0pt] at (current page.south west) {%
       {\color{muted!55}\rule{3.6cm}{0.5pt}}\\[4pt]
       {\fontsize{9}{12.5}\selectfont\color{muted}#1}%
     };
