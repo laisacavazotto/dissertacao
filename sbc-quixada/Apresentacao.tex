@@ -129,6 +129,19 @@
   \end{minipage}}%
 }
 
+% same as \panel but with an explicit fixed height (e.g. for a pair of
+% side-by-side panels whose text lengths differ, so both read as the
+% same size instead of the shorter one looking cut short).
+% #1=width #2=height(w/ unit) #3=bgcolor #4=textcolor #5=title #6=body
+\newcommand{\panelh}[6]{%
+  \colorbox{#3}{\begin{minipage}[t][#2][t]{#1}
+    \vspace{3mm}
+    {\color{#4}\bfseries\fontsize{19}{23}\selectfont #5\par}
+    \vspace{1.5mm}
+    {\color{#4}\fontsize{15}{19}\selectfont #6\par}
+  \end{minipage}}%
+}
+
 % per-slide citation footnotes, anchored to a fixed position near the bottom
 % of the physical page (independent of each frame's content height) so they
 % never collide with the footline bar. A thin rule marks where the slide's
@@ -232,7 +245,7 @@
   \begin{center}
   \begin{columns}[T]
     \column{0.48\textwidth}\centering
-      \panel{5.6in}{ice}{navy}{\faIcon{database}\ Bases de Dados}{%
+      \panelh{5.6in}{2.1in}{ice}{navy}{\faIcon{database}\ Bases de Dados}{%
         \vspace{-2mm}
         {\setbeamertemplate{itemize item}{\color{navy}\textbullet}\setbeamerfont{itemize/enumerate body}{size=\fontsize{15}{20}\selectfont}
         \begin{itemize}
@@ -243,7 +256,7 @@
           \item {\color{navy}Per\'iodo: 2014--2024}
         \end{itemize}}}
     \column{0.48\textwidth}\centering
-      \panel{5.6in}{navy}{white}{\faIcon{clipboard-list}\ Protocolo Metodol\'ogico}{%
+      \panelh{5.6in}{2.1in}{navy}{white}{\faIcon{clipboard-list}\ Protocolo Metodol\'ogico}{%
         \vspace{-2mm}
         {\setbeamertemplate{itemize item}{\color{ice}\textbullet}\setbeamerfont{itemize/enumerate body}{size=\fontsize{15}{20}\selectfont}
         \begin{itemize}
