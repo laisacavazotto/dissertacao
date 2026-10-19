@@ -56,9 +56,9 @@
 % leave headroom above the per-slide footnotes instead of overflowing.
 \makeatletter
 \renewcommand\@listI{\leftmargin\leftmargini
-  \itemsep 3pt plus 1pt minus 1pt
+  \itemsep 9pt plus 2pt minus 1pt
   \parsep 0pt
-  \topsep 3pt plus 1pt minus 1pt
+  \topsep 6pt plus 2pt minus 1pt
   \itemindent 0pt}
 \makeatother
 
@@ -335,7 +335,7 @@
   \begin{center}
   \begin{columns}[T]
     \column{0.48\textwidth}\centering
-      \panel{5.6in}{ice}{navy}{\faIcon{check}\ Crit\'erios de Inclus\~ao (CI)}{%
+      \panelh{5.6in}{2.0in}{ice}{navy}{\faIcon{check}\ Crit\'erios de Inclus\~ao (CI)}{%
         \vspace{-2mm}
         {\setbeamertemplate{itemize item}{\color{navy}\textbullet}\setbeamerfont{itemize/enumerate body}{size=\fontsize{14}{19}\selectfont}
         \begin{itemize}
@@ -345,7 +345,7 @@
           \item {\color{navy}\textbf{CI8} --- Publicado entre 2014--2024}
         \end{itemize}}}
     \column{0.48\textwidth}\centering
-      \panel{5.6in}{navy}{white}{\faIcon{times}\ Crit\'erios de Exclus\~ao (CE)}{%
+      \panelh{5.6in}{2.0in}{navy}{white}{\faIcon{times}\ Crit\'erios de Exclus\~ao (CE)}{%
         \vspace{-2mm}
         {\setbeamertemplate{itemize item}{\color{ice}\textbullet}\setbeamerfont{itemize/enumerate body}{size=\fontsize{14}{19}\selectfont}
         \begin{itemize}
@@ -451,13 +451,25 @@
   \cornericon{steel}{\faIcon{file-contract}}
   \qptag{QP1, QP4 --- Evolu\c{c}\~ao e Paradigmas}
   \panel{10.6in}{ice}{navy}{``Aviso e Escolha'' (\textit{Notice and Choice})\textsuperscript{1}}{Consentimento bin\'ario sobre termos extensos; EULAs unilaterais e inegoci\'aveis (\textit{take-it-or-leave-it} --- ``pegar ou largar''); a responsabilidade legal \'e transferida ao usu\'ario.}
-  \vspace{5mm}
+  \vspace{6mm}
   \begin{itemize}
     \item Regula\c{c}\~ao inicial (Diretiva 95/46/CE $\rightarrow$ GDPR) tratava o dado --- replic\'avel e relacional --- como um objeto f\'isico isolado\textsuperscript{2}.
     \item Resultado: ecossistemas fechados (\textit{walled gardens})\textsuperscript{2}, que monopolizam a cust\'odia dos dados e restringem a interoperabilidade.
-    \item A IHC cl\'assica limitava-se \`a usabilidade de tela, sem tratar os riscos \'eticos do processamento invis\'ivel e onipresente\textsuperscript{3}.
   \end{itemize}
-  \slidefootnotes{1. JONES, R.; SAILAJA, N.; KERLIN, L. Probing the design space of usable privacy policies. BCS HCI, 2017; HUTTON, L.; HENDERSON, T. Beyond the EULA. \textit{Studies in Big Data}, 2017. \\[2pt]2. MALGIERI, G. Automated decision-making in the EU Member States. \textit{Computer Law \& Security Review}, 2019; JANE\v{C}EK, V. Ownership of personal data in the IoT. \textit{Computer Law \& Security Review}, 2018. \\[2pt]3. PARVIAINEN, J. Quantified bodies in the checking loop. \textit{Human Technology}, 2016; CALVETTI, D. et al. Human Data Interaction in Sensored Sites. EC3 Conference, 2021.}
+  \slidefootnotes{1. JONES, R.; SAILAJA, N.; KERLIN, L. Probing the design space of usable privacy policies. BCS HCI, 2017; HUTTON, L.; HENDERSON, T. Beyond the EULA. \textit{Studies in Big Data}, 2017. \\[2pt]2. MALGIERI, G. Automated decision-making in the EU Member States. \textit{Computer Law \& Security Review}, 2019; JANE\v{C}EK, V. Ownership of personal data in the IoT. \textit{Computer Law \& Security Review}, 2018.}
+\end{frame}
+
+% ============================================================ SLIDE 6B -- QP1/QP4 Antes (IHC classica)
+\begin{frame}
+  \frametitle{Antes da IHD: os limites da IHC cl\'assica}
+  \cornericon{steel}{\faIcon{desktop}}
+  \qptag{QP1, QP4 --- Evolu\c{c}\~ao e Paradigmas}
+  \begin{itemize}
+    \item Paradigma tecnocr\'atico: prioridade \`a efici\^encia do processamento bruto e \`a seguran\c{c}a algor\'itmica corporativa, em detrimento da carga cognitiva do usu\'ario\textsuperscript{1}.
+    \item O desenvolvimento de \textit{software} operava confinado \`as camadas f\'isica, emp\'irica e sint\'atica da Escada Semi\'otica\textsuperscript{2} (modelo que vai da infraestrutura t\'ecnica ao impacto no mundo real), negligenciando as dimens\~oes sociais e pragm\'aticas.
+    \item A IHC cl\'assica concentrava-se na usabilidade de \textit{hardware} e em m\'etricas pontuais de efici\^encia, sem tratar os riscos \'eticos do processamento invis\'ivel e onipresente\textsuperscript{3}.
+  \end{itemize}
+  \slidefootnotes{1. LOCORO, A. et al. IGV short scale to assess implicit value of visualizations. \textit{Applied Sciences}, 2020. \\[2pt]2. HORNUNG, H. et al. Challenges for human-data interaction -- a semiotic perspective. LNCS, 2015. \\[2pt]3. PARVIAINEN, J. Quantified bodies in the checking loop. \textit{Human Technology}, 2016; CALVETTI, D. et al. Human Data Interaction in Sensored Sites. EC3 Conference, 2021.}
 \end{frame}
 
 % ============================================================ SLIDE 7 -- QP1/QP4 Depois
@@ -466,13 +478,26 @@
   \cornericon{amber}{\faIcon{layer-group}}
   \qptag{QP1, QP4 --- Evolu\c{c}\~ao e Paradigmas}
   \panel{10.6in}{navy}{white}{A virada de 2015 (Mortier et al.)\textsuperscript{1}}{A IHD emerge como campo \'etico aut\^onomo: dados deixam de ser entradas passivas e tornam-se entidades comput\'aveis --- manipul\'aveis, transfer\'iveis e audit\'aveis --- material de \textit{design}, n\~ao subproduto do sistema.}
-  \vspace{5mm}
+  \vspace{6mm}
   \begin{itemize}
-    \item \textbf{Legibilidade}: da exibi\c{c}\~ao est\'atica ao \textit{data sensemaking}\textsuperscript{2} (constru\c{c}\~ao ativa de sentido sobre os dados) --- mas jarg\~oes t\'ecnicos ainda persistem nas implementa\c{c}\~oes reais\textsuperscript{2}.
-    \item \textbf{Ag\^encia}: do consentimento bin\'ario \`a \textit{accountability}\textsuperscript{3} (presta\c{c}\~ao de contas) --- o cidad\~ao vira \textit{steward} (guardi\~ao) de seus rastros\textsuperscript{3}, por\'em sem heur\'isticas validadas de apoio\textsuperscript{4}.
-    \item \textbf{Negociabilidade}: da tela ao IoT urbano onipresente\textsuperscript{5} --- o controle segue fragmentado entre m\'ultiplas ferramentas\textsuperscript{5}.
+    \item \textbf{Legibilidade}: da exibi\c{c}\~ao est\'atica ao \textit{data sensemaking}\textsuperscript{2} (constru\c{c}\~ao ativa de sentido sobre os dados), estruturada em eixos de inspe\c{c}\~ao, engajamento e contextualiza\c{c}\~ao.
+    \item Na pr\'atica, por\'em, jarg\~oes t\'ecnicos e fluxos de decis\~ao n\~ao lineares ainda persistem nas implementa\c{c}\~oes reais\textsuperscript{2}.
   \end{itemize}
-  \slidefootnotes{1. MORTIER, R. et al. Human-Data Interaction. \textit{arXiv}, 2015. \\[2pt]2. KOESTEN, L. et al. Talking datasets. \textit{Intl. J. of Human-Computer Studies}, 2021; SAILAJA, N. et al. Human-Data Interaction through Design. CHI EA, 2021. \\[2pt]3. JANE\v{C}EK, V. Ownership of personal data in the IoT. \textit{Computer Law \& Security Review}, 2018; ANGELOPOULOS, S. et al. Stewardship of personal data. \textit{Intl. J. of Information Management}, 2021. \\[2pt]4. STREY, M. R. Human-Data Ideation. Diss., UFPR, 2019; VICTORELLI, E. Z.; REIS, J. C. HDI design guidelines. IHC, 2020. \\[2pt]5. LOCORO, A. et al. IGV short scale. \textit{Applied Sciences}, 2020; CHATZIMICHALI, A. et al. Toward privacy-sensitive HRI. \textit{Paladyn}, 2021.}
+  \slidefootnotes{1. MORTIER, R. et al. Human-Data Interaction. \textit{arXiv}, 2015. \\[2pt]2. KOESTEN, L. et al. Talking datasets. \textit{Intl. J. of Human-Computer Studies}, 2021; SAILAJA, N. et al. Human-Data Interaction through Design. CHI EA, 2021.}
+\end{frame}
+
+% ============================================================ SLIDE 7B -- QP1/QP4 Depois (agencia e negociabilidade)
+\begin{frame}
+  \frametitle{Depois: ag\^encia e negociabilidade na pr\'atica}
+  \cornericon{amber}{\faIcon{balance-scale}}
+  \qptag{QP1, QP4 --- Evolu\c{c}\~ao e Paradigmas}
+  \begin{itemize}
+    \item \textbf{Ag\^encia}: do consentimento bin\'ario \`a \textit{accountability}\textsuperscript{1} (presta\c{c}\~ao de contas) --- o cidad\~ao vira \textit{steward} (guardi\~ao) de seus pr\'oprios rastros digitais\textsuperscript{1}.
+    \item Na pr\'atica, por\'em, faltam heur\'isticas validadas que apoiem projetistas a aplicar esses artefatos te\'oricos no desenvolvimento de \textit{software}\textsuperscript{2}.
+    \item \textbf{Negociabilidade}: da tela ao IoT urbano onipresente\textsuperscript{3} --- governan\c{c}a difusa de dados captados por sensores, muitas vezes sem o engajamento consciente do transeunte.
+    \item O controle segue fragmentado entre m\'ultiplas ferramentas, comprometendo um di\'alogo sim\'etrico entre popula\c{c}\~ao e sistemas de monitoramento\textsuperscript{3}.
+  \end{itemize}
+  \slidefootnotes{1. JANE\v{C}EK, V. Ownership of personal data in the IoT. \textit{Computer Law \& Security Review}, 2018; ANGELOPOULOS, S. et al. Stewardship of personal data. \textit{Intl. J. of Information Management}, 2021. \\[2pt]2. STREY, M. R. Human-Data Ideation. Diss., UFPR, 2019; VICTORELLI, E. Z.; REIS, J. C. HDI design guidelines. IHC, 2020. \\[2pt]3. LOCORO, A. et al. IGV short scale. \textit{Applied Sciences}, 2020; CHATZIMICHALI, A. et al. Toward privacy-sensitive HRI. \textit{Paladyn}, 2021.}
 \end{frame}
 
 % ============================================================ SLIDE 8 -- QP2/QP3 Lacunas estruturais
@@ -507,10 +532,14 @@
   \frametitle{O clímax da tens\~ao: um ``problema perverso''}
   \cornericon{amber}{\faIcon{exclamation-circle}}
   \qptag{QP2, QP3 --- Lacunas e Descompasso Pr\'atico}
-  {\fontsize{17}{22}\selectfont\color{muted}
-   Um \textbf{``problema perverso''}\textsuperscript{1} (\textit{wicked problem}) \'e aquele sem defini\c{c}\~ao \'unica, cujas solu\c{c}\~oes geram novos problemas e dependem de \textit{trade-offs} entre atores --- diferente de um problema t\'ecnico comum, n\~ao tem uma resposta certa a ser calculada.\par}
-  \vspace{6mm}
-  \panel{10.6in}{amber}{navy}{Por que a IHD classifica assim o dilema das Cidades Inteligentes}{\'E interdependente, sist\^emico e sem solu\c{c}\~ao puramente t\'ecnica: otimizar servi\c{c}os urbanos exige coletar mais dados; proteger a privacidade exige coletar menos --- um \textit{trade-off} direto, n\~ao um bug a corrigir. Some-se a isso que as diretrizes de controle vigentes s\~ao limitadas diante da capilaridade da infraestrutura urbana\textsuperscript{2}, dificultando que o pr\'oprio cidad\~ao identifique o prop\'osito real do monitoramento passivo a que est\'a exposto.}
+  \panel{10.6in}{amber}{navy}{Por que \'e um ``problema perverso''\textsuperscript{1} (\textit{wicked problem})}{Sem defini\c{c}\~ao \'unica e sem solu\c{c}\~ao t\'ecnica calcul\'avel: qualquer resposta gera novos \textit{trade-offs} entre os atores envolvidos.}
+  \vspace{7mm}
+  \begin{itemize}
+    \item Otimizar servi\c{c}os em Cidades Inteligentes exige coletar \textbf{mais} dados; proteger a privacidade exige coletar \textbf{menos} --- um \textit{trade-off} direto, n\~ao um defeito a corrigir.
+    \item Qualquer ajuste algor\'itmico desloca o problema para outro ator (empresa, cidad\~ao ou Estado), em vez de elimin\'a-lo.
+    \item As diretrizes de controle vigentes s\~ao limitadas diante da capilaridade da infraestrutura urbana\textsuperscript{2}.
+    \item Isso dificulta que o pr\'oprio cidad\~ao identifique o prop\'osito real do monitoramento passivo a que est\'a exposto.
+  \end{itemize}
   \slidefootnotes{1. MEIRELES, P.; HORNUNG, H. Human values in human-data interaction. IHC, 2016; CHOWDHURY, S. N.; DHAWAN, S. HDI based data ownership model for smart cities. ICRTIT, 2016. \\[2pt]2. MASHHADI, A.; KAWSAR, F.; ACER, U. G. Human Data Interaction in IoT: the ownership aspect. IEEE WF-IoT, 2014.}
 \end{frame}
 
