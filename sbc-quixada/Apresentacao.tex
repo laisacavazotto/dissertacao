@@ -118,6 +118,15 @@
   \end{minipage}}%
 }
 
+% per-slide citation footnotes, anchored to a fixed position near the bottom
+% of the physical page (independent of each frame's content height) so they
+% never collide with the footline bar. #1 = footnote text (already numbered).
+\newcommand{\slidefootnotes}[1]{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=south west,xshift=8mm,yshift=4.2mm,text width=11.8in,align=left] at (current page.south west) {{\fontsize{8}{10}\selectfont\color{muted}#1}};
+  \end{tikzpicture}%
+}
+
 \title{}
 \author{}
 \date{}
@@ -170,7 +179,7 @@
 % ============================================================ SLIDE 3 -- O que e IHD
 \begin{frame}
   \frametitle{Intera\c{c}\~ao Humano-Dados (IHD)}
-  {\fontsize{20}{25}\selectfont Proposta por \textbf{Mortier et al. (2015)} --- campo aut\^onomo, focado na rela\c{c}\~ao \'etica entre o indiv\'iduo e seus rastros de dados.\par}
+  {\fontsize{20}{25}\selectfont Proposta por \textbf{Mortier et al. (2015)}\textsuperscript{1} --- campo aut\^onomo, focado na rela\c{c}\~ao \'etica entre o indiv\'iduo e seus rastros de dados.\par}
   \vspace{6mm}
   \begin{columns}[T]
     \column{0.333\textwidth}\centering
@@ -180,6 +189,7 @@
     \column{0.333\textwidth}\centering
       \pillarcard{navy}{\faIcon{exchange-alt}}{Negociabilidade}{Revisar e revogar permiss\~oes conforme o contexto muda.}
   \end{columns}
+  \slidefootnotes{1. MORTIER, R.; HADDADI, H.; HENDERSON, T.; McAULEY, D.; CROWCROFT, J. Human-Data Interaction: The Human Face of the Data-Driven Society. \textit{arXiv}, 2015.}
 \end{frame}
 
 % ============================================================ SLIDE 3B -- Divisor Metodologia
@@ -199,46 +209,46 @@
   {\fontsize{14}{18}\selectfont\color{steel} Fontes e per\'iodo \textperiodcentered\ Perguntas de pesquisa \textperiodcentered\ Crit\'erios CI/CE \textperiodcentered\ Avalia\c{c}\~ao de Qualidade \textperiodcentered\ Triagem e corpus\par}
 \end{frame}}
 
-% ============================================================ SLIDE 4 -- Objetivo e Perguntas de Pesquisa
+% ============================================================ SLIDE 4 -- Objetivo e Perguntas de Pesquisa (Principais)
 \begin{frame}
   \frametitle{Objetivo e perguntas de pesquisa}
   \cornericon{amber}{\faIcon{compass}}
-  \vspace{2mm}
+  \vspace{1mm}
   \begin{center}
   \begin{tikzpicture}
-    \node[rounded corners=6pt,fill=ice,minimum width=10.6in,minimum height=1.05in,text width=9.8in,align=center,text=navy,font=\bfseries\fontsize{21}{25}\selectfont] {Mapear a evolu\c{c}\~ao da IHD em contextos urbanos (2014--2024)};
+    \node[rounded corners=6pt,fill=ice,minimum width=10.6in,minimum height=0.9in,text width=9.8in,align=center,text=navy,font=\bfseries\fontsize{20}{24}\selectfont] {Mapear a evolu\c{c}\~ao da IHD em contextos urbanos (2014--2024)};
   \end{tikzpicture}
   \end{center}
   \vspace{3mm}
-  {\fontsize{14}{18}\selectfont\color{muted}\centering Fontes: Scopus, Science Direct, Portal de Peri\'odicos CAPES, Teses CAPES/USP \textperiodcentered\ per\'iodo: 2014--2024\par}
+  {\fontsize{14}{18}\selectfont\color{muted}\centering Fontes: Scopus, Science Direct, Portal de Peri\'odicos CAPES, Teses CAPES/USP \textperiodcentered\ 2014--2024 \textperiodcentered\ Protocolo: Kitchenham e Brereton (2013)\textsuperscript{1} + PRISMA 2020\textsuperscript{2}\par}
+  \vspace{6mm}
+  {\fontsize{18}{22}\selectfont\bfseries\color{navy} Quest\~oes principais (QP)\par}
+  \vspace{2mm}
+  {\fontsize{18}{23}\selectfont
+  \begin{itemize}
+    \item \textbf{QP1} --- Como a IHD evoluiu em conceito e pr\'atica (2014--2024)?
+    \item \textbf{QP2} --- Quais as diferen\c{c}as entre teoria e pr\'atica na literatura?
+    \item \textbf{QP3} --- Quais lacunas de pesquisa s\~ao recorrentemente citadas?
+    \item \textbf{QP4} --- Antes da IHD (pr\'e-2015), como se entendia a gest\~ao de dados?
+    \item \textbf{QP5} --- Qual a import\^ancia da IHD em Cidades Inteligentes?
+  \end{itemize}}
+  \slidefootnotes{1. KITCHENHAM, B.; BRERETON, P. A systematic review of systematic review process research in software engineering. \textit{Information and Software Technology}, 2013. \quad 2. PAGE, M. J. et al. The PRISMA 2020 statement. \textit{BMJ}, 2021.}
+\end{frame}
+
+% ============================================================ SLIDE 4A2 -- Perguntas de Pesquisa (Secundarias)
+\begin{frame}
+  \frametitle{Perguntas de pesquisa secund\'arias}
+  \cornericon{amber}{\faIcon{compass}}
+  \vspace{4mm}
+  {\fontsize{18}{22}\selectfont\bfseries\color{navy} Quest\~oes secund\'arias (QPS)\par}
   \vspace{3mm}
-  {\fontsize{16}{20}\selectfont\itshape\color{muted}\centering Para isso, a revis\~ao busca responder a 9 perguntas de pesquisa:\par}
-  \vspace{3mm}
-  {\setbeamerfont{itemize/enumerate body}{size=\fontsize{14}{17}\selectfont}
-  \begin{columns}[T]
-    \column{0.5\textwidth}
-      {\fontsize{16}{19}\selectfont\bfseries\color{navy} Principais (QP)\par}
-      \vspace{1mm}
-      \begin{itemize}
-        \item \textbf{QP1} --- Como a IHD evoluiu em conceito e pr\'atica (2014--2024)?
-        \item \textbf{QP2} --- Quais as diferen\c{c}as entre teoria e pr\'atica na literatura?
-        \item \textbf{QP3} --- Quais lacunas de pesquisa s\~ao recorrentemente citadas?
-        \item \textbf{QP4} --- Antes da IHD (pr\'e-2015), como se entendia a gest\~ao de dados?
-        \item \textbf{QP5} --- Qual a import\^ancia da IHD em Cidades Inteligentes?
-      \end{itemize}
-    \column{0.5\textwidth}
-      {\fontsize{16}{19}\selectfont\bfseries\color{navy} Secund\'arias (QPS)\par}
-      \vspace{1mm}
-      \begin{itemize}
-        \item \textbf{QPS1} --- Quais m\'etodos avaliam a efic\'acia da IHD (ex.: \textit{eye-tracking})?
-        \item \textbf{QPS2} --- O que ajuda usu\'arios leigos a compreender os dados?
-        \item \textbf{QPS3} --- Os estudos testaram \textit{frameworks} de IHD em casos reais?
-        \item \textbf{QPS4} --- Como fatores \'etnico-culturais influenciam a aplica\c{c}\~ao da IHD?
-      \end{itemize}
-  \end{columns}}
-  \vspace{3mm}
-  {\fontsize{14}{18}\selectfont\itshape\color{muted}\centering
-   Protocolo: Kitchenham e Brereton (2013) \textperiodcentered\ RSL + PRISMA 2020 \textperiodcentered\ sem filtro de idioma\par}
+  {\fontsize{19}{25}\selectfont
+  \begin{itemize}
+    \item \textbf{QPS1} --- Quais m\'etodos avaliam a efic\'acia da IHD (ex.: \textit{eye-tracking})?
+    \item \textbf{QPS2} --- O que ajuda usu\'arios leigos a compreender os dados?
+    \item \textbf{QPS3} --- Os estudos testaram \textit{frameworks} de IHD em casos reais?
+    \item \textbf{QPS4} --- Como fatores \'etnico-culturais influenciam a aplica\c{c}\~ao da IHD?
+  \end{itemize}}
 \end{frame}
 
 % ============================================================ SLIDE 4B -- Criterios de Selecao e Funil
@@ -301,11 +311,11 @@
   \begin{center}
   \begin{columns}[T]
     \column{0.333\textwidth}\centering
-      \statbox{3.3}{2.2}{ice}{41}{n\'ivel 3 \textperiodcentered\ 3+ eixos articulados (41,8\%)}
+      \statbox{3.3}{2.2}{ice}{41}{\textbf{N\'ivel 3} (41,8\%)\\3+ eixos articulados}
     \column{0.333\textwidth}\centering
-      \statbox{3.3}{2.2}{ice}{27}{n\'ivel 2 \textperiodcentered\ dois eixos relacionados (27,6\%)}
+      \statbox{3.3}{2.2}{ice}{27}{\textbf{N\'ivel 2} (27,6\%)\\2 eixos relacionados}
     \column{0.333\textwidth}\centering
-      \statbox{3.3}{2.2}{ice}{30}{n\'ivel 1 \textperiodcentered\ um \'unico eixo (30,6\%)}
+      \statbox{3.3}{2.2}{ice}{30}{\textbf{N\'ivel 1} (30,6\%)\\1 \'unico eixo}
   \end{columns}
   \end{center}
   \vspace{8mm}
@@ -382,13 +392,14 @@
   \frametitle{Antes da IHD: paradigma tecnocr\'atico}
   \cornericon{steel}{\faIcon{file-contract}}
   \qptag{QP1, QP4 --- Evolu\c{c}\~ao e Paradigmas}
-  \panel{10.6in}{ice}{navy}{``Aviso e Escolha'' (\textit{Notice and Choice})}{Consentimento bin\'ario sobre termos extensos; EULAs unilaterais e inegoci\'aveis (\textit{take-it-or-leave-it}); a responsabilidade legal \'e transferida ao usu\'ario.}
+  \panel{10.6in}{ice}{navy}{``Aviso e Escolha'' (\textit{Notice and Choice})\textsuperscript{1}}{Consentimento bin\'ario sobre termos extensos; EULAs unilaterais e inegoci\'aveis (\textit{take-it-or-leave-it} --- ``pegar ou largar''); a responsabilidade legal \'e transferida ao usu\'ario.}
   \vspace{5mm}
   \begin{itemize}
-    \item Regula\c{c}\~ao inicial (Diretiva 95/46/CE $\rightarrow$ GDPR) tratava o dado --- replic\'avel e relacional --- como um objeto f\'isico isolado.
-    \item Resultado: ecossistemas fechados (\textit{walled gardens}), que monopolizam a cust\'odia dos dados e restringem a interoperabilidade.
-    \item A IHC cl\'assica limitava-se \`a usabilidade de tela, sem tratar os riscos \'eticos do processamento invis\'ivel e onipresente.
+    \item Regula\c{c}\~ao inicial (Diretiva 95/46/CE $\rightarrow$ GDPR) tratava o dado --- replic\'avel e relacional --- como um objeto f\'isico isolado\textsuperscript{2}.
+    \item Resultado: ecossistemas fechados (\textit{walled gardens})\textsuperscript{2}, que monopolizam a cust\'odia dos dados e restringem a interoperabilidade.
+    \item A IHC cl\'assica limitava-se \`a usabilidade de tela, sem tratar os riscos \'eticos do processamento invis\'ivel e onipresente\textsuperscript{3}.
   \end{itemize}
+  \slidefootnotes{1. JONES, R.; SAILAJA, N.; KERLIN, L. Probing the design space of usable privacy policies. BCS HCI, 2017; HUTTON, L.; HENDERSON, T. Beyond the EULA. \textit{Studies in Big Data}, 2017. \quad 2. MALGIERI, G. Automated decision-making in the EU Member States. \textit{Computer Law \& Security Review}, 2019; JANE\v{C}EK, V. Ownership of personal data in the IoT. \textit{Computer Law \& Security Review}, 2018. \quad 3. PARVIAINEN, J. Quantified bodies in the checking loop. \textit{Human Technology}, 2016; CALVETTI, D. et al. Human Data Interaction in Sensored Sites. EC3 Conference, 2021.}
 \end{frame}
 
 % ============================================================ SLIDE 7 -- QP1/QP4 Depois
@@ -396,13 +407,14 @@
   \frametitle{Depois: o dado como objeto de 1\textsuperscript{a} classe}
   \cornericon{amber}{\faIcon{layer-group}}
   \qptag{QP1, QP4 --- Evolu\c{c}\~ao e Paradigmas}
-  \panel{10.6in}{navy}{white}{A virada de 2015 (Mortier et al.)}{A IHD emerge como campo \'etico aut\^onomo: dados deixam de ser entradas passivas e tornam-se entidades comput\'aveis --- manipul\'aveis, transfer\'iveis e audit\'aveis --- material de \textit{design}, n\~ao subproduto do sistema.}
+  \panel{10.6in}{navy}{white}{A virada de 2015 (Mortier et al.)\textsuperscript{1}}{A IHD emerge como campo \'etico aut\^onomo: dados deixam de ser entradas passivas e tornam-se entidades comput\'aveis --- manipul\'aveis, transfer\'iveis e audit\'aveis --- material de \textit{design}, n\~ao subproduto do sistema.}
   \vspace{5mm}
   \begin{itemize}
-    \item \textbf{Legibilidade}: da exibi\c{c}\~ao est\'atica ao \textit{data sensemaking} --- mas jarg\~oes t\'ecnicos ainda persistem nas implementa\c{c}\~oes reais.
-    \item \textbf{Ag\^encia}: do consentimento bin\'ario \`a \textit{accountability} --- o cidad\~ao vira \textit{steward} de seus rastros, por\'em sem heur\'isticas validadas de apoio.
-    \item \textbf{Negociabilidade}: da tela ao IoT urbano onipresente --- o controle segue fragmentado entre m\'ultiplas ferramentas.
+    \item \textbf{Legibilidade}: da exibi\c{c}\~ao est\'atica ao \textit{data sensemaking}\textsuperscript{2} (constru\c{c}\~ao ativa de sentido sobre os dados) --- mas jarg\~oes t\'ecnicos ainda persistem nas implementa\c{c}\~oes reais\textsuperscript{2}.
+    \item \textbf{Ag\^encia}: do consentimento bin\'ario \`a \textit{accountability}\textsuperscript{3} (presta\c{c}\~ao de contas) --- o cidad\~ao vira \textit{steward} (guardi\~ao) de seus rastros\textsuperscript{3}, por\'em sem heur\'isticas validadas de apoio\textsuperscript{4}.
+    \item \textbf{Negociabilidade}: da tela ao IoT urbano onipresente\textsuperscript{5} --- o controle segue fragmentado entre m\'ultiplas ferramentas\textsuperscript{5}.
   \end{itemize}
+  \slidefootnotes{1. MORTIER, R. et al. Human-Data Interaction. \textit{arXiv}, 2015. \quad 2. KOESTEN, L. et al. Talking datasets. \textit{Intl. J. of Human-Computer Studies}, 2021; SAILAJA, N. et al. Human-Data Interaction through Design. CHI EA, 2021. \quad 3. JANE\v{C}EK, V. Ownership of personal data in the IoT. \textit{Computer Law \& Security Review}, 2018; ANGELOPOULOS, S. et al. Stewardship of personal data. \textit{Intl. J. of Information Management}, 2021. \quad 4. STREY, M. R. Human-Data Ideation. Diss., UFPR, 2019; VICTORELLI, E. Z.; REIS, J. C. HDI design guidelines. IHC, 2020. \quad 5. LOCORO, A. et al. IGV short scale. \textit{Applied Sciences}, 2020; CHATZIMICHALI, A. et al. Toward privacy-sensitive HRI. \textit{Paladyn}, 2021.}
 \end{frame}
 
 % ============================================================ SLIDE 8 -- QP2/QP3 Lacunas estruturais
@@ -411,11 +423,12 @@
   \cornericon{steel}{\faIcon{brain}}
   \qptag{QP2, QP3 --- Lacunas e Descompasso Pr\'atico}
   \begin{itemize}
-    \item Falta de heur\'isticas de \textit{design} validadas, sobretudo em geoprocessamento --- lacuna que motivou o pr\'oprio \textit{framework} ATLAS.
-    \item Ambiguidade na defini\c{c}\~ao dos perfis de usu\'ario e aus\^encia de crit\'erios claros do que torna um dado aberto reutiliz\'avel.
-    \item Sobrecarga cognitiva negligenciada: fadiga e ansiedade informacional pela perda de controle sobre os pr\'oprios registros.
-    \item Identidade Autossoberana (SSI): paradigma promissor de gest\~ao descentralizada de credenciais, mas ainda complexo demais para o p\'ublico leigo.
+    \item Falta de heur\'isticas de \textit{design} validadas, sobretudo em geoprocessamento --- lacuna que motivou o pr\'oprio \textit{framework} ATLAS\textsuperscript{1}.
+    \item Ambiguidade na defini\c{c}\~ao dos perfis de usu\'ario\textsuperscript{2} e aus\^encia de crit\'erios claros do que torna um dado aberto reutiliz\'avel\textsuperscript{3}.
+    \item Sobrecarga cognitiva negligenciada\textsuperscript{4}: fadiga e ansiedade informacional pela perda de controle sobre os pr\'oprios registros\textsuperscript{5}.
+    \item Identidade Autossoberana (SSI)\textsuperscript{6}: paradigma promissor de gest\~ao descentralizada de credenciais, mas ainda complexo demais para o p\'ublico leigo.
   \end{itemize}
+  \slidefootnotes{1. CAPELETI, B. S. Human-Data Interaction in Geoprocessing Applications. Diss., UFLA, 2024. \quad 2. BELIZ\'ARIO, M. G. Intera\c{c}\~ao de Cidad\~aos com Plataformas de Grafos de Conhecimento. Diss., UTFPR, 2023. \quad 3. KOESTEN, L. et al. Dataset Reuse. \textit{Patterns}, 2020. \quad 4. LOCORO, A. et al. IGV short scale. \textit{Applied Sciences}, 2020. \quad 5. CEZAR, B. G. S.; MA\c{C}ADA, A. C. G. Cognitive Overload, Anxiety... \textit{Information Processing \& Management}, 2023. \quad 6. LOCKWOOD, M. Self-Sovereign Identity Adoption. \textit{Frontiers in Blockchain}, 2021; LOCKWOOD, M. An Accessible Interface Layer for SSI. \textit{Frontiers in Blockchain}, 2020.}
 \end{frame}
 
 % ============================================================ SLIDE 9 -- QP2/QP3 IA e opacidade
@@ -424,12 +437,13 @@
   \cornericon{steel}{\faIcon{robot}}
   \qptag{QP2, QP3 --- Lacunas e Descompasso Pr\'atico}
   \begin{itemize}
-    \item Algoritmos de aprendizado de m\'aquina sofrem \textit{covariate shift}, dificultando o \textit{sensemaking} humano sobre fluxos de dados em tempo real.
-    \item Sigilo industrial e caixas-pretas corporativas comprometem o Direito \`a Explica\c{c}\~ao de decis\~oes automatizadas que afetam o cidad\~ao.
-    \item Servi\c{c}os de Gest\~ao de Dados Pessoais (PDMS) ainda falham em conciliar o extrativismo comercial com a real ag\^encia do usu\'ario.
+    \item Algoritmos de aprendizado de m\'aquina sofrem \textit{covariate shift}\textsuperscript{1} (mudan\c{c}a na distribui\c{c}\~ao dos dados), dificultando o \textit{sensemaking} (constru\c{c}\~ao de sentido) humano sobre fluxos de dados em tempo real.
+    \item Sigilo industrial e caixas-pretas corporativas comprometem o Direito \`a Explica\c{c}\~ao\textsuperscript{2} de decis\~oes automatizadas que afetam o cidad\~ao.
+    \item Servi\c{c}os de Gest\~ao de Dados Pessoais (PDMS)\textsuperscript{3} ainda falham em conciliar o extrativismo comercial com a real ag\^encia do usu\'ario.
   \end{itemize}
   \vspace{4mm}
-  \panel{10.6in}{amber}{navy}{Um ``problema perverso''}{O equil\'ibrio entre otimizar servi\c{c}os em Cidades Inteligentes e proteger a privacidade \'e interdependente, sist\^emico e sem solu\c{c}\~ao puramente t\'ecnica.}
+  \panel{10.6in}{amber}{navy}{Um ``problema perverso''\textsuperscript{4}}{O equil\'ibrio entre otimizar servi\c{c}os em Cidades Inteligentes e proteger a privacidade \'e interdependente, sist\^emico e sem solu\c{c}\~ao puramente t\'ecnica.}
+  \slidefootnotes{1. HAGHIGHATI, A.; SEDIG, K. VARTTA. \textit{Data}, 2020. \quad 2. BARRETO, P. et al. Assessing the communicability of HDI mechanisms. FedCSIS, 2018; DE ALMEIDA, M. C.; SALGADO, L. C. Investigating Google Dashboard's explainability. IHC, 2019. \quad 3. ANGELOPOULOS, S. et al. Stewardship of personal data. \textit{Intl. J. of Information Management}, 2021. \quad 4. MEIRELES, P.; HORNUNG, H. Human values in HDI. IHC, 2016; CHOWDHURY, S. N.; DHAWAN, S. HDI based data ownership model for smart cities. ICRTIT, 2016.}
 \end{frame}
 
 % ============================================================ SLIDE 9B -- Divisor Parte 2
@@ -455,11 +469,12 @@
   \cornericon{amber}{\faIcon{broadcast-tower}}
   \qptag{QP5, QPS4 --- Cidades Inteligentes e Fatores Culturais}
   \begin{itemize}
-    \item Tecnologia calma (\textit{calm technology}): monitorar o ambiente sem intrusão, com a privacidade como premissa central da arquitetura.
-    \item Legibilidade c\'ivica: entender a coleta feita por sensores de rua liga atos cotidianos (como o transporte p\'ublico) \`as macroestruturas de extra\c{c}\~ao de dados.
-    \item Ag\^encia via Limita\c{c}\~ao da Finalidade: direito de desativar a captura ambiental e de aprovar usos secund\'arios da informa\c{c}\~ao.
-    \item \textit{Frameworks} locais --- HDIdea e ATLAS --- adaptam heur\'isticas e metáforas visuais ao contexto urbano espec\'ifico.
+    \item Tecnologia calma (\textit{calm technology})\textsuperscript{1}: monitorar o ambiente sem intrusão, com a privacidade como premissa central da arquitetura.
+    \item Legibilidade c\'ivica\textsuperscript{2}: entender a coleta feita por sensores de rua liga atos cotidianos (como o transporte p\'ublico) \`as macroestruturas de extra\c{c}\~ao de dados.
+    \item Ag\^encia via Limita\c{c}\~ao da Finalidade\textsuperscript{3}: direito de desativar a captura ambiental e de aprovar usos secund\'arios da informa\c{c}\~ao.
+    \item \textit{Frameworks} locais --- HDIdea\textsuperscript{4} e ATLAS\textsuperscript{5} --- adaptam heur\'isticas e metáforas visuais ao contexto urbano espec\'ifico.
   \end{itemize}
+  \slidefootnotes{1. KONOMI, S. Big data for humans or humans for big data? CEUR Workshop Proc., 2022; CHOWDHURY, S. N.; DHAWAN, S. HDI based data ownership model. ICRTIT, 2016. \quad 2. COLETI, T. A. et al. Design Patterns for Personal Data Transparency. LNCS, 2019; HUTTON, L.; HENDERSON, T. Beyond the EULA. \textit{Studies in Big Data}, 2017. \quad 3. MASHHADI, A. et al. Human Data Interaction in IoT. IEEE WF-IoT, 2014. \quad 4. STREY, M. R. Human-Data Ideation. Diss., UFPR, 2019. \quad 5. CAPELETI, B. S. Human-Data Interaction in Geoprocessing Applications. Diss., UFLA, 2024.}
 \end{frame}
 
 % ============================================================ SLIDE 11 -- QP5/QPS4 Fatores culturais e Brasil
@@ -468,11 +483,12 @@
   \cornericon{amber}{\faIcon{globe-americas}}
   \qptag{QP5, QPS4 --- Cidades Inteligentes e Fatores Culturais}
   \begin{itemize}
-    \item Coletivismo $\times$ individualismo: culturas coletivistas aceitam mais o compartilhamento voltado ao benef\'icio comum; individualistas priorizam a restri\c{c}\~ao pessoal.
-    \item Vi\'es de legado (\textit{legacy bias}): a importa\c{c}\~ao acr\'itica de modelos do Norte Global pode acentuar assimetrias no Brasil, marcado por disparidades de letramento digital.
-    \item Minorias \'etnicas negociam menos seus dados com o Estado --- risco acrescido de discrimina\c{c}\~ao algor\'itmica e exclus\~ao das din\^amicas das Cidades Inteligentes.
-    \item GranDIHC-BR (2025--2035): Grandes Desafios de Pesquisa nacionalizam a agenda da IHD no contexto brasileiro.
+    \item Coletivismo $\times$ individualismo\textsuperscript{1}: culturas coletivistas aceitam mais o compartilhamento voltado ao benef\'icio comum; individualistas priorizam a restri\c{c}\~ao pessoal.
+    \item Vi\'es de legado (\textit{legacy bias}\textsuperscript{2} --- tend\^encia a repetir comportamentos de tecnologias j\'a conhecidas): a importa\c{c}\~ao acr\'itica de modelos do Norte Global pode acentuar assimetrias no Brasil, marcado por disparidades de letramento digital.
+    \item Minorias \'etnicas negociam menos seus dados com o Estado\textsuperscript{3} --- risco acrescido de discrimina\c{c}\~ao algor\'itmica e exclus\~ao das din\^amicas das Cidades Inteligentes.
+    \item GranDIHC-BR (2025--2035)\textsuperscript{4}: Grandes Desafios de Pesquisa nacionalizam a agenda da IHD no contexto brasileiro.
   \end{itemize}
+  \slidefootnotes{1. LOCORO, A. et al. IGV short scale to assess implicit value of visualizations. \textit{Applied Sciences}, 2020. \quad 2. FRIEDMAN, A.; CAFARO, F. Designing Gestures for Data Exploration with Public Displays. \textit{Information}, 2024. \quad 3. MALGIERI, G.; NIKLAS, J. Vulnerable data subjects. \textit{Computer Law \& Security Review}, 2020; YUAN, J. et al. TRIVEA. \textit{Visual Computer}, 2024. \quad 4. PEREIRA, R.; DARIN, T.; SILVEIRA, M. S. GranDIHC-BR: Grand Research Challenges in HCI in Brazil 2025-2035. IHC, 2024.}
 \end{frame}
 
 % ============================================================ SLIDE 12 -- QPS1-3 Multissensorial
@@ -481,11 +497,12 @@
   \cornericon{steel}{\faIcon{hand-paper}}
   \qptag{QPS1--QPS3 --- Avalia\c{c}\~ao e Inclus\~ao Multissensorial}
   \begin{itemize}
-    \item ``Mantra de Shneiderman'' (vis\~ao geral $\rightarrow$ \textit{zoom} $\rightarrow$ filtro) organiza pain\'eis, mas \'e insuficiente sozinho para o p\'ublico leigo.
-    \item \textit{Scaffolding}: suporte progressivo ao aprendizado substitui sintaxes complexas por question\'amentos guiados.
-    \item Interfaces de Voz (VUI) e sonifica\c{c}\~ao reduzem a barreira de aprendizado, explorando vias auditivas e vieses motores j\'a conhecidos.
-    \item Fisicaliza\c{c}\~ao t\'atil e \textit{Databoxes} (nós de processamento local) tornam a governan\c{c}a de dados tang\'ivel.
+    \item ``Mantra de Shneiderman''\textsuperscript{1} (vis\~ao geral $\rightarrow$ \textit{zoom} $\rightarrow$ filtro) organiza pain\'eis, mas \'e insuficiente sozinho para o p\'ublico leigo\textsuperscript{2}.
+    \item \textit{Scaffolding}\textsuperscript{3} (``andaime'': suporte progressivo que guia o aprendizado): substitui sintaxes complexas por question\'amentos guiados.
+    \item Interfaces de Voz (VUI) e sonifica\c{c}\~ao\textsuperscript{4} reduzem a barreira de aprendizado, explorando vias auditivas e vieses motores j\'a conhecidos.
+    \item Fisicaliza\c{c}\~ao t\'atil e \textit{Databoxes}\textsuperscript{5} (n\'os de processamento local) tornam a governan\c{c}a de dados tang\'ivel.
   \end{itemize}
+  \slidefootnotes{1. VICTORELLI, E. Z.; REIS, J. C. Human-data interaction design guidelines for visualization systems. IHC, 2020. \quad 2. YUAN, J. et al. TRIVEA. \textit{Visual Computer}, 2024; LINDLEY, J. et al. Researching AI Legibility through Design. CHI, 2020. \quad 3. TRAJKOVA, M. et al. Move Your Body: Engaging Museum Visitors with HDI. CHI, 2020. \quad 4. SAILAJA, N. et al. Human-Data Interaction through Design. CHI EA, 2021; FRIEDMAN, A.; CAFARO, F. Designing Gestures for Data Exploration. \textit{Information}, 2024. \quad 5. CRABTREE, A. Enabling the new economic actor. IEEE IC2EW, 2016.}
 \end{frame}
 
 % ============================================================ SLIDE 13 -- QPS1-3 Metodos de avaliacao
@@ -494,11 +511,12 @@
   \cornericon{steel}{\faIcon{clipboard-check}}
   \qptag{QPS1--QPS3 --- Avalia\c{c}\~ao e Inclus\~ao Multissensorial}
   \begin{itemize}
-    \item \textit{Eye-tracking}: mede a sobrecarga cognitiva subconsciente em pain\'eis complexos (ex.: ATLAS).
-    \item \textit{Think-Aloud}, entrevistas com peritos e o M\'etodo de Avalia\c{c}\~ao de Comunicabilidade (MAC) avaliam a compreens\~ao c\'ivica de forma pragm\'atica.
-    \item Testes A/B, mapeamentos sistem\'aticos e pain\'eis \textit{Delphi} sustentam o consenso metodol\'ogico cont\'inuo da \'area.
-    \item A comunidade brasileira de IHC nacionaliza esses protocolos como ferramenta contra as disparidades da dataficação.
+    \item \textit{Eye-tracking}\textsuperscript{1} (rastreamento ocular): mede a sobrecarga cognitiva subconsciente em pain\'eis complexos (ex.: ATLAS).
+    \item \textit{Think-Aloud}\textsuperscript{2} (``pensar em voz alta''), entrevistas com peritos e o M\'etodo de Avalia\c{c}\~ao de Comunicabilidade (MAC) avaliam a compreens\~ao c\'ivica de forma pragm\'atica.
+    \item Testes A/B, mapeamentos sistem\'aticos e pain\'eis \textit{Delphi}\textsuperscript{3} (consenso por rodadas de especialistas) sustentam o consenso metodol\'ogico cont\'inuo da \'area.
+    \item A comunidade brasileira de IHC nacionaliza esses protocolos como ferramenta contra as disparidades da dataficação\textsuperscript{4}.
   \end{itemize}
+  \slidefootnotes{1. CAPELETI, B. S. Human-Data Interaction in Geoprocessing Applications. Diss., UFLA, 2024; KAUFMANN, K. et al. Ethical challenges of researching emergent socio-material-technological phenomena. \textit{J. of Information, Communication and Ethics in Society}, 2021. \quad 2. STREY, M. R. Human-Data Ideation. Diss., UFPR, 2019; BELIZ\'ARIO, M. G. Intera\c{c}\~ao de Cidad\~aos com Plataformas de Grafos de Conhecimento. Diss., UTFPR, 2023. \quad 3. REFAT, N.; PATWARY, M.; RAHMAN, M. A. Digital Inclusion Towards e-Governance. \textit{Postdigital Science and Education}, 2023. \quad 4. CAPELETI, B. S. (2024); STREY, M. R. (2019); BELIZ\'ARIO, M. G. (2023), \textit{op. cit.}}
 \end{frame}
 
 % ============================================================ SLIDE 13B -- Divisor Parte 3
@@ -529,19 +547,20 @@
   \begin{tabular}{p{3.3in} p{3.7in} p{4.3in}}
     \toprule
     \textbf{\textit{Framework}} & \textbf{Princ\'ipio coberto} & \textbf{M\'etodo de avalia\c{c}\~ao} \\ \midrule
-    Modelo Fundacional (Mortier et al.) & Legibilidade, Ag\^encia, Negociabilidade & Testes cl\'inicos, question\'arios, estudos de caso \\
+    Modelo Fundacional (Mortier et al.)\textsuperscript{1} & Legibilidade, Ag\^encia, Negociabilidade & Testes cl\'inicos, question\'arios, estudos de caso \\
     \rowcolor{ice!25}
-    HDIdea & Legibilidade & \textit{Think-Aloud}, heur\'isticas colaborativas \\
-    ATLAS (Geoprocessamento) & Legibilidade e Ag\^encia & \textit{Eye-tracking}, MAC \\
+    HDIdea\textsuperscript{2} & Legibilidade & \textit{Think-Aloud}, heur\'isticas colaborativas \\
+    ATLAS (Geoprocessamento)\textsuperscript{3} & Legibilidade e Ag\^encia & \textit{Eye-tracking}, MAC \\
     \rowcolor{ice!25}
-    \textit{Databoxes} / Mercados de Dados & Ag\^encia e Negociabilidade & Testes A/B, prototipa\c{c}\~ao tang\'ivel \\
-    IHD Multissensorial (VUI e t\'atil) & Legibilidade (Acessibilidade) & Vieses motores, pain\'eis \textit{Delphi} \\
+    \textit{Databoxes} / Mercados de Dados\textsuperscript{4} & Ag\^encia e Negociabilidade & Testes A/B, prototipa\c{c}\~ao tang\'ivel \\
+    IHD Multissensorial (VUI e t\'atil)\textsuperscript{5} & Legibilidade (Acessibilidade) & Vieses motores, pain\'eis \textit{Delphi} \\
     \bottomrule
   \end{tabular}}
   \end{center}
   \vspace{8mm}
   {\fontsize{16}{20}\selectfont\itshape\color{muted}\centering
-   Vers\~ao completa na Tabela 5 do artigo --- inclui tamb\'em \textit{Scaffolding} e Modelos H\'ibridos (CPS/XAI)\par}
+   Vers\~ao completa na Tabela 5 do artigo --- inclui tamb\'em \textit{Scaffolding}\textsuperscript{6} e Modelos H\'ibridos\textsuperscript{7} (CPS/XAI)\par}
+  \slidefootnotes{1. MORTIER, R. et al. (2015). \quad 2. STREY, M. R. (2019). \quad 3. CAPELETI, B. S. (2024). \quad 4. CRABTREE, A. (2016). \quad 5. SAILAJA, N. et al. (2021); FRIEDMAN, A.; CAFARO, F. (2024); CRABTREE, A. (2016). \quad 6. TRAJKOVA, M. et al. (2020). \quad 7. BAVARESCO, M. V. et al. Technological innovations... \textit{Energy and Buildings}, 2019; DURANGO, I. et al. The data dance. \textit{Intl. J. of Data Science and Analytics}, 2024. \quad Refer\^encias completas no artigo.}
 \end{frame}
 
 % ============================================================ SLIDE 15 -- Taxonomia por pilar
@@ -550,15 +569,16 @@
   \vspace{2mm}
   \begin{columns}[T]
     \column{0.333\textwidth}\centering
-      \pillarcard{navy}{\faIcon{eye}}{Legibilidade}{HDIdea, ATLAS, IHD Multissensorial, Diretrizes Cognitivas (\textit{Scaffolding}).}
+      \pillarcard{navy}{\faIcon{eye}}{Legibilidade}{HDIdea\textsuperscript{1}, ATLAS\textsuperscript{2}, IHD Multissensorial\textsuperscript{3}, Diretrizes Cognitivas (\textit{Scaffolding})\textsuperscript{4}.}
     \column{0.333\textwidth}\centering
-      \pillarcard{navy}{\faIcon{handshake}}{Ag\^encia}{ATLAS, \textit{Databoxes} e Mercados de Dados, Modelos H\'ibridos (CPS/XAI).}
+      \pillarcard{navy}{\faIcon{handshake}}{Ag\^encia}{ATLAS\textsuperscript{2}, \textit{Databoxes} e Mercados de Dados\textsuperscript{5}, Modelos H\'ibridos (CPS/XAI)\textsuperscript{6}.}
     \column{0.333\textwidth}\centering
-      \pillarcard{navy}{\faIcon{exchange-alt}}{Negociabilidade}{\textit{Databoxes} e Mercados de Dados, Modelos H\'ibridos (CPS/XAI).}
+      \pillarcard{navy}{\faIcon{exchange-alt}}{Negociabilidade}{\textit{Databoxes} e Mercados de Dados\textsuperscript{5}, Modelos H\'ibridos (CPS/XAI)\textsuperscript{6}.}
   \end{columns}
   \vspace{4mm}
   {\fontsize{15}{19}\selectfont\itshape\color{muted}\centering
    Contribui\c{c}\~ao original desta revis\~ao: ATLAS e os Modelos H\'ibridos cobrem mais de um pilar por sobreporem princ\'ipios\par}
+  \slidefootnotes{1. STREY, M. R. (2019). \quad 2. CAPELETI, B. S. (2024). \quad 3. SAILAJA, N. et al. (2021); FRIEDMAN, A.; CAFARO, F. (2024); CRABTREE, A. (2016). \quad 4. TRAJKOVA, M. et al. (2020). \quad 5. CRABTREE, A. (2016). \quad 6. BAVARESCO, M. V. et al. (2019); DURANGO, I. et al. (2024). \quad Refer\^encias completas na Matriz Comparativa (slide anterior) e no artigo.}
 \end{frame}
 
 % ============================================================ SLIDE 16 -- Contribuicoes
